@@ -15,6 +15,7 @@ html{
 .fadeFigure{
   transition: 3s;
   display: inline-block;
+
 }
 
 .container{
@@ -23,7 +24,7 @@ html{
   align-items: center;
 }
 
-button{
+.button--forwards{
   display: inline-block;
   margin-left: 5rem;
   width: 0;
@@ -31,4 +32,18 @@ button{
 	border-top: 25px solid #fff;
 	border-left: 50px solid #000;
 	border-bottom: 25px solid #fff;
+}
+
+.button--backwards{
+  display: inline-block;
+  margin-right: 5rem;
+  width: 0;
+	height: 0;
+	border-top: 25px solid #fff;
+	border-right: 50px solid #000;
+	border-bottom: 25px solid #fff;
+}
+
+.fadeFigure__image{
+  border-radius: 50%;
 }
