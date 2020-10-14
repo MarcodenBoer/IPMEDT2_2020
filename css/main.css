@@ -5,28 +5,37 @@
 }
 
 :root{
-
+  --funny-bg-color: #696969;
 }
 
 html{
   font-size: 62.5%;
 }
 
-.fadeFigure{
-  transition: 3s;
-  display: inline-block;
-
-}
-
-.container{
+main{
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: repeat(12,minmax(0,1fr));
+  grid-template-rows: repeat(12, minmax(0,1fr));
+  width: 75%;
+  height: 80vh;
+}
+
+.fadeFigure{
+  transition: 3s;
+  grid-column: 5 / span 4;
+  grid-row: 1 / span 6;
 }
 
 .button--forwards{
-  display: inline-block;
-  margin-left: 5rem;
+  grid-column: 10 / span 2;
+  grid-row: 4 / span 2;
   width: 0;
 	height: 0;
 	border-top: 25px solid #fff;
@@ -35,8 +44,8 @@ html{
 }
 
 .button--backwards{
-  display: inline-block;
-  margin-right: 5rem;
+  grid-column: 3 / span 2;
+  grid-row: 4 / span 2;
   width: 0;
 	height: 0;
 	border-top: 25px solid #fff;
@@ -46,4 +55,16 @@ html{
 
 .fadeFigure__image{
   border-radius: 50%;
+  height: 100%;
+  width: 100%;
+}
+
+.image__discription{
+  grid-column: 5 / span 5;
+  grid-row: 8 / span 2;
+  background-color: var(--funny-bg-color);
+}
+
+.image__discription > p{
+  font-size: 4rem;
 }
