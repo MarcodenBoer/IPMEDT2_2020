@@ -6,10 +6,14 @@
 
 :root{
   --funny-bg-color: #696969;
+  --main-bg-color: #080808;
+  --html-text-color: #eee;
+  --dot-color-active: #3c3c3c;
 }
 
 html{
   font-size: 62.5%;
+  color: var(--html-text-color);
 }
 
 main{
@@ -17,6 +21,7 @@ main{
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: var(--main-bg-color);
 }
 
 .container{
@@ -34,23 +39,51 @@ main{
 }
 
 .button--forwards{
+  position: relative;
   grid-column: 10 / span 2;
-  grid-row: 4 / span 2;
+  grid-row: 4 / span 1;
   width: 0;
 	height: 0;
-	border-top: 25px solid #fff;
-	border-left: 50px solid #000;
-	border-bottom: 25px solid #fff;
+	border-top: 25px solid var(--main-bg-color);
+	border-left: 50px solid var(--html-text-color);
+	border-bottom: 25px solid var(--main-bg-color);
+}
+
+.button--forwards::before{
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background-color: var(--main-bg-color);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  top: -40px;
+  right: 40px;
 }
 
 .button--backwards{
+  position: relative;
   grid-column: 3 / span 2;
-  grid-row: 4 / span 2;
+  grid-row: 4 / span 1;
   width: 0;
 	height: 0;
-	border-top: 25px solid #fff;
-	border-right: 50px solid #000;
-	border-bottom: 25px solid #fff;
+	border-top: 25px solid var(--main-bg-color);
+	border-right: 50px solid var(--html-text-color);
+	border-bottom: 25px solid var(--main-bg-color);
+  align-self: right;
+}
+
+.button--backwards::after{
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background-color: var(--main-bg-color);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  top: -40px;
+  left: 40px;
+  outline: none;
 }
 
 .fadeFigure__image{
@@ -59,12 +92,58 @@ main{
   width: 100%;
 }
 
+.nav__bubbles{
+  grid-column: 6 / span 2;
+  grid-row: 7 / span 1;
+  margin-left: 60px;
+  margin-top: 15px;
+}
+
+.nav__bubbles__dot{
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: var(--html-text-color);
+  margin: 0 1rem;
+}
+
+.firstDot{background-color: var(--dot-color-active)}
+
 .image__discription{
-  grid-column: 5 / span 5;
-  grid-row: 8 / span 2;
-  background-color: var(--funny-bg-color);
+  grid-column: 4 / span 6;
+  grid-row: 8 / span 4;
+  background-color: var(--main-bg-color);
+  border: .2rem solid var(--html-text-color);
+  outline: .2rem solid var(--html-text-color);
+  outline-offset: .4rem;
+  text-align: center;
+  border-radius: .5rem;
 }
 
 .image__discription > p{
   font-size: 4rem;
+  width: 100%;
+  padding: 2rem
+}
+
+.image__discription > button{
+  width: 60%;
+  margin-top: 1rem;
+  font-size: 3rem;
+  padding: 1.5rem;
+  border: none;
+  transition: .5s;
+  border-radius: .5rem;
+}
+
+.image__discription > button:hover{
+  background-color: var(--main-bg-color);
+  color: var(--html-text-color);
+  border: .2rem solid var(--html-text-color);
+}
+
+.image__discription > button:active{
+  transform: translateY(.5rem);
+  transition: none;
 }
