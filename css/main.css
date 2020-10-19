@@ -9,6 +9,7 @@
   --main-bg-color: #080808;
   --html-text-color: #eee;
   --dot-color-active: #3c3c3c;
+  --overlay-color: rgba(0,0,0,50%);
 }
 
 html{
@@ -30,12 +31,36 @@ main{
   grid-template-rows: repeat(12, minmax(0,1fr));
   width: 75%;
   height: 80vh;
+  z-index: 2;
 }
 
 .fadeFigure{
+  height: 100vh;
+  width: 100vw;
   transition: 3s;
-  grid-column: 5 / span 4;
-  grid-row: 1 / span 6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.overlay{
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.overlay::after{
+  content: "";
+  position: absolute;
+  left: 40vw;
+  top: 10vh;
+  height: 40vh;
+  width: 40vh;
+  border-radius: 100%;
+  box-shadow: 0px 0px 0px 2000px var(--overlay-color);
 }
 
 .button--forwards{
@@ -70,7 +95,6 @@ main{
 	border-top: 25px solid var(--main-bg-color);
 	border-right: 50px solid var(--html-text-color);
 	border-bottom: 25px solid var(--main-bg-color);
-  align-self: right;
 }
 
 .button--backwards::after{
@@ -87,9 +111,9 @@ main{
 }
 
 .fadeFigure__image{
-  border-radius: 50%;
   height: 100%;
   width: 100%;
+  background-size: cover;
 }
 
 .nav__bubbles{
