@@ -67,47 +67,19 @@ main{
   position: relative;
   grid-column: 10 / span 2;
   grid-row: 4 / span 1;
-  width: 0;
-	height: 0;
-	border-top: 25px solid var(--main-bg-color);
-	border-left: 50px solid var(--html-text-color);
-	border-bottom: 25px solid var(--main-bg-color);
-}
-
-.button--forwards::before{
-  content: "";
-  display: inline-block;
-  position: absolute;
-  background-color: var(--main-bg-color);
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  top: -40px;
-  right: 40px;
+  width: 10rem;
+	height: 10rem;
+  background-color: white;
+	clip-path: polygon(55% 28%, 100% 50%, 55% 72%, 0% 100%, 25% 50%, 0% 0%);
 }
 
 .button--backwards{
   position: relative;
   grid-column: 3 / span 2;
   grid-row: 4 / span 1;
-  width: 0;
-	height: 0;
-	border-top: 25px solid var(--main-bg-color);
-	border-right: 50px solid var(--html-text-color);
-	border-bottom: 25px solid var(--main-bg-color);
-}
-
-.button--backwards::after{
-  content: "";
-  display: inline-block;
-  position: absolute;
-  background-color: var(--main-bg-color);
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  top: -40px;
-  left: 40px;
-  outline: none;
+  width: 10rem;
+	height: 10rem;
+  clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 45% 72%, 0% 50%, 45% 28%);
 }
 
 .fadeFigure__image{
