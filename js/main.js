@@ -5,6 +5,11 @@ const fadeFigure__image = document.getElementById('js--fadeFigure__image');
 const image__discription = document.getElementById('js--image__discription');
 const bubbles = document.getElementsByClassName('nav__bubbles__dot');
 const image__discription__button = document.getElementById("js--image__discription__button");
+const backButton = document.getElementsByClassName('backButton');
+const woodsPage = document.getElementById('js--woodsPage');
+const fisch = document.getElementById('js--fisch');
+const towerPage = document.getElementById('js--towerPage');
+const navPage = document.getElementById('js--navPage');
 
 image__discription.innerHTML = "";
 const dotColor__active = "#eee";
@@ -13,13 +18,13 @@ const dotColor__notActive = "#3c3c3c";
 const list = ["/img/Forest.jpg", "/img/Moby-logo.png", "/img/Tower.jpg"];
 const description_list = ["Via dit bos pad zal ik bij het vluchtelingen kamp kunnen komen", "this be a fish >:(", "Vanaf deze toren heb ik een perfect uitzicht over het dorp"]
 const locatie = ["het bospad", "de fisch", "de wachttoren"];
+const locatiePage = [woodsPage, fisch, towerPage];
 let i = 0;
 let x = 0;
 
 change_img__forwards.onclick = () =>{
   fadeFigure.style.filter = "blur(5rem)";
   image__discription.innerHTML = "";
-  image__discription__button.innerHTML = "";
   change_img__forwards.disabled = true;
   change_img__backwards.disabled = true;
   setTimeout(function () {
@@ -30,6 +35,7 @@ change_img__forwards.onclick = () =>{
       bubbles[i].style.backgroundColor = dotColor__notActive;
       fadeFigure__image.setAttribute("src", list[i]);
       typeText(Array.from(description_list[x]));
+      image__discription__button.innerHTML = "";
       image__discription__button.innerHTML = "Naar " + locatie[i];
     }else {
       bubbles[i].style.backgroundColor = dotColor__active;
@@ -38,6 +44,7 @@ change_img__forwards.onclick = () =>{
       x++;
       fadeFigure__image.setAttribute("src", list[i]);
       typeText(Array.from(description_list[x]));
+      image__discription__button.innerHTML = "";
       image__discription__button.innerHTML = "Naar " + locatie[i];
     }
       fadeFigure.style.filter = "blur(0)";
@@ -59,6 +66,7 @@ change_img__backwards.onclick = () =>{
       bubbles[i].style.backgroundColor = dotColor__notActive;
       fadeFigure__image.setAttribute("src", list[i]);
       typeText(Array.from(description_list[x]));
+      image__discription__button.innerHTML = "";
       image__discription__button.innerHTML = "Naar " + locatie[i];
     }else {
       bubbles[i].style.backgroundColor = dotColor__active;
@@ -67,6 +75,7 @@ change_img__backwards.onclick = () =>{
       x--;
       fadeFigure__image.setAttribute("src", list[i]);
       typeText(Array.from(description_list[x]));
+      image__discription__button.innerHTML = "";
       image__discription__button.innerHTML = "Naar " + locatie[i];
     }
       fadeFigure.style.filter = "blur(0)";
@@ -83,6 +92,18 @@ change_img__backwards.onclick = () =>{
       typeText(textToBeTyped)
     }, 100);
   }
+}
+
+image__discription__button.onclick = () =>{
+  navPage.style.display = "none";
+  locatiePage[i].style.display = "block";
+}
+
+for (var n = 0; n < backButton.length; n++) {
+  backButton[n].onclick = () =>{
+    locatiePage[i].style.display = "none";
+    navPage.style.display = "grid";
+}
 }
 
 typeText(Array.from(description_list[x]));

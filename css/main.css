@@ -140,3 +140,15 @@ main{
   transform: translateY(.5rem);
   transition: none;
 }
+
+.woodsPage{
+  display: none;
+}
+
+.fisch{
+  display: none;
+}
+
+.towerPage{
+  display: none;
+}
