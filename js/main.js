@@ -10,10 +10,16 @@ const woodsPage = document.getElementById('js--woodsPage');
 const fisch = document.getElementById('js--fisch');
 const towerPage = document.getElementById('js--towerPage');
 const navPage = document.getElementById('js--navPage');
+const scope = document.getElementById('js--scope');
+const targetCounter = document.getElementById('js--targetCounter');
+const target = document.getElementsByClassName('target');
+
 
 image__discription.innerHTML = "";
 const dotColor__active = "#eee";
 const dotColor__notActive = "#3c3c3c";
+
+tCount = 0;
 
 const list = ["/img/Forest.jpg", "/img/Moby-logo.png", "/img/Tower.jpg"];
 const description_list = ["Via dit bos pad zal ik bij het vluchtelingen kamp kunnen komen", "this be a fish >:(", "Vanaf deze toren heb ik een perfect uitzicht over het dorp"]
@@ -97,13 +103,30 @@ change_img__backwards.onclick = () =>{
 image__discription__button.onclick = () =>{
   navPage.style.display = "none";
   locatiePage[i].style.display = "block";
+  document.body.style.cursor = "none";
 }
 
-for (var n = 0; n < backButton.length; n++) {
+for (let n = 0; n < backButton.length; n++) {
   backButton[n].onclick = () =>{
     locatiePage[i].style.display = "none";
     navPage.style.display = "grid";
+    document.body.style.cursor = "default";
+  }
 }
+
+const onMouseMove = (e) =>{
+  scope.style.left ='calc(' + e.pageX + 'px - 5rem)';
+  scope.style.top = 'calc(' + e.pageY + 'px - 5rem)';
 }
+
+for (let n = 0; n < target.length; n++) {
+  target[n].onclick = () =>{
+    target[n].style.display = "none";
+    tCount++;
+    targetCounter.innerHTML = "Targets: " + tCount + "/6";
+  }
+}
+
+document.addEventListener('mousemove', onMouseMove);
 
 typeText(Array.from(description_list[x]));

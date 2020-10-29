@@ -141,6 +141,39 @@ main{
   transition: none;
 }
 
+.targetOne{
+  position: absolute;
+  left: 30%;
+  top: 40%;
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  background-color: purple;
+}
+
+.targetTwo{
+  position: absolute;
+  left: 70%;
+  top: 70%;
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  background-color: purple;
+}
+
+.targetCounter{
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  color: green;
+  z-index: 3;
+}
+
+.backButton:hover{
+  cursor: none;
+}
+
 .woodsPage{
   display: none;
 }
@@ -151,4 +184,30 @@ main{
 
 .towerPage{
   display: none;
+}
+
+.scope{
+  position: absolute;
+  border-radius: 50%;
+  height: 10rem;
+  width: 10rem;
+  background:
+    linear-gradient(#000,#000),
+    linear-gradient(#000,#000);
+  background-position:center;
+  background-size: 50% 1rem,1rem 50%; /*thickness = 2px, length = 50% (25px)*/
+  background-repeat:no-repeat;
+  pointer-events: none;
+}
+
+.scope::after{
+  content: "";
+  position: absolute;
+  top: calc(-27.5rem/3);
+  left: calc(-27.5rem/3);
+  height: 27.5rem;
+  width: 27.5rem;
+  border-radius: 100%;
+  box-shadow: 0px 0px 0px 2000px var(--overlay-color);
+  pointer-events: none;
 }
