@@ -10,7 +10,8 @@ const woodsPage = document.getElementById('js--woodsPage');
 const fisch = document.getElementById('js--fisch');
 const towerPage = document.getElementById('js--towerPage');
 const navPage = document.getElementById('js--navPage');
-const scope = document.getElementById('js--scope');
+// const scope = document.getElementById('js--scope');
+const scope = document.getElementsByClassName('scope');
 const targetCounter = document.getElementById('js--targetCounter');
 const target = document.getElementsByClassName('target');
 
@@ -115,8 +116,10 @@ for (let n = 0; n < backButton.length; n++) {
 }
 
 const onMouseMove = (e) =>{
-  scope.style.left ='calc(' + e.pageX + 'px - 5rem)';
-  scope.style.top = 'calc(' + e.pageY + 'px - 5rem)';
+  for (var i = 0; i < scope.length; i++) {
+    scope[i].style.left ='calc(' + e.pageX + 'px - 5rem)';
+    scope[i].style.top = 'calc(' + e.pageY + 'px - 5rem)';
+  }
 }
 
 for (let n = 0; n < target.length; n++) {
