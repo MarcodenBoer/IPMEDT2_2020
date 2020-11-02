@@ -10,10 +10,12 @@ const woodsPage = document.getElementById('js--woodsPage');
 const fisch = document.getElementById('js--fisch');
 const towerPage = document.getElementById('js--towerPage');
 const navPage = document.getElementById('js--navPage');
-// const scope = document.getElementById('js--scope');
 const scope = document.getElementsByClassName('scope');
 const targetCounter = document.getElementById('js--targetCounter');
 const target = document.getElementsByClassName('target');
+const info = document.getElementsByClassName('info');
+const closeInfoButton = document.getElementsByClassName('closeInfoButton');
+const infoBackground = document.getElementsByClassName('info__background');
 
 
 image__discription.innerHTML = "";
@@ -109,9 +111,9 @@ image__discription__button.onclick = () =>{
 
 for (let n = 0; n < backButton.length; n++) {
   backButton[n].onclick = () =>{
-    locatiePage[i].style.display = "none";
+    setTimeout(() =>{locatiePage[i].style.display = "none";
     navPage.style.display = "grid";
-    document.body.style.cursor = "default";
+    document.body.style.cursor = "default";}, 750)
   }
 }
 
@@ -124,9 +126,50 @@ const onMouseMove = (e) =>{
 
 for (let n = 0; n < target.length; n++) {
   target[n].onclick = () =>{
-    target[n].style.display = "none";
-    tCount++;
-    targetCounter.innerHTML = "Targets: " + tCount + "/6";
+    setTimeout(() =>{console.log('bang');}, 500);
+    setTimeout(() =>{
+    if (target[n].classList.contains('targetShot') == false) {
+      tCount++;
+      targetCounter.innerHTML = "Targets: " + tCount + "/6";
+    };
+    target[n].classList.add('targetShot');
+    for (let i = 0; i < info.length; i++) {
+      info[i].style.display = "flex";
+      setTimeout(() =>{
+        info[i].style.opacity = '1';
+      }, 500);
+    }
+    for (let i = 0; i < scope.length; i++) {
+      scope[i].style.display ='none';
+    }
+    for (let i = 0; i < info.length; i++) {
+      info[i].style.cursor = 'default';
+      info[i].style['pointer-events'] = "auto";
+    }}, 750);
+  }
+}
+
+const closeInfo = () =>{
+  for (let i = 0; i < info.length; i++) {
+    info[i].style.opacity = '0';
+    setTimeout(() =>{
+      info[i].style.display = 'none';
+      for (let i = 0; i < scope.length; i++) {
+        scope[i].style.display ='block';
+      }
+    }, 500);
+  }
+}
+
+for (let i = 0; i < closeInfoButton.length; i++) {
+  closeInfoButton[i].onclick = () =>{
+    closeInfo();
+  }
+}
+
+for (let i = 0; i < infoBackground.length; i++) {
+  infoBackground[i].onclick = () =>{
+    closeInfo();
   }
 }
 

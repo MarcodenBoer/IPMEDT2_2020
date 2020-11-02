@@ -141,33 +141,74 @@ main{
   transition: none;
 }
 
-.targetOne{
+.target{
   position: absolute;
-  left: 30%;
-  top: 40%;
   border-radius: 50%;
   height: 3rem;
   width: 3rem;
   background-color: purple;
 }
 
-.targetTwo{
-  position: absolute;
+.targetShot{
+  background-color: grey;
+}
+
+.targetOne{
+  left: 30%;
+  top: 40%;
+}
+
+.targetTwo, .towerTargetOne{
   left: 70%;
   top: 70%;
-  border-radius: 50%;
-  height: 3rem;
-  width: 3rem;
-  background-color: purple;
+}
+
+.info{
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  transition: opacity .5s;
+  opacity: 0;
+}
+
+.info__background{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 3
+}
+
+.info__box{
+  width: 80%;
+  height: 60%;
+  border: .2rem solid var(--html-text-color);
+  outline: .2rem solid var(--html-text-color);
+  outline-offset: .4rem;
+  text-align: center;
+  border-radius: .5rem;
+  background-color: var(--overlay-color);
+  z-index: 4;
 }
 
 .targetCounter{
   position: absolute;
   top: 1rem;
-  right: 1.5rem;
+  right: 3.5rem;
   font-size: 2rem;
   color: green;
   z-index: 3;
+}
+
+.backButton{
+  position: absolute;
+  top: 80vh;
+  left: 86vw;
+  height: 15vh;
+  width: 15vh;
+  border-radius: 50%;
+  border: none;
 }
 
 .backButton:hover{
@@ -198,6 +239,8 @@ main{
   background-size: 50% 1rem,1rem 50%; /*thickness = 2px, length = 50% (25px)*/
   background-repeat:no-repeat;
   pointer-events: none;
+  z-index: 2;
+  transition: all .5s;
 }
 
 .scope::after{
