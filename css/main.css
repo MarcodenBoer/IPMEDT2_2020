@@ -192,6 +192,23 @@ main{
   z-index: 4;
 }
 
+.info__box > h1{
+  font-size: 3rem;
+  padding: 1.5rem;
+}
+
+.info__box > p{
+  font-size: 2.5rem;
+}
+
+.info__box > button{
+  width: 75%;
+  font-size: 4rem;
+  border: none;
+  border-radius: .5rem;
+  margin: 1.5rem;
+}
+
 .targetCounter{
   position: absolute;
   top: 1rem;
