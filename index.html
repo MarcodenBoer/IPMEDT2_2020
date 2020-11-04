@@ -7,8 +7,12 @@
   </head>
   <body>
     <main>
+      <audio id="js--gunFire" src="sounds/gunShot.ogg"></audio>
+      <audio id="js--walkingSound" src="sounds/walking.wav"></audio>
+      <audio id="js--wind" src="sounds/wind.wav" preload="auto"></audio>
       <p class="targetCounter" id="js--targetCounter">Targets: 0/6</p>
       <div class="container" id="js--navPage">
+
         <button id="js--change_img--backwards" class="button--backwards" type="button" name="button"></button>
         <figure id="js--fadeFigure" class="fadeFigure">
           <div class="overlay"></div>
@@ -26,6 +30,7 @@
         </section>
       </div>
       <div class="woodsPage" id="js--woodsPage">
+
         <div class="targetOne target"></div>
         <div class="targetTwo target"></div>
         <section class="info">

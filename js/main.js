@@ -16,7 +16,9 @@ const target = document.getElementsByClassName('target');
 const info = document.getElementsByClassName('info');
 const closeInfoButton = document.getElementsByClassName('closeInfoButton');
 const infoBackground = document.getElementsByClassName('info__background');
-
+const gunFire = document.getElementById('js--gunFire');
+const walkingSound = document.getElementById('js--walkingSound');
+const wind = document.getElementById('js--wind');
 
 image__discription.innerHTML = "";
 const dotColor__active = "#eee";
@@ -31,7 +33,16 @@ const locatiePage = [woodsPage, fisch, towerPage];
 let i = 0;
 let x = 0;
 
+const walkingSoundPlay = () =>{
+  // TODO: zet wind play op start knop van kevin
+  wind.loop = true;
+  wind.play();
+  walkingSound.play();
+  setTimeout(() => {walkingSound.pause(); walkingSound.currentTime = 0;}, 6000);
+}
+
 change_img__forwards.onclick = () =>{
+  walkingSoundPlay();
   fadeFigure.style.filter = "blur(5rem)";
   image__discription.innerHTML = "";
   change_img__forwards.disabled = true;
@@ -63,6 +74,7 @@ change_img__forwards.onclick = () =>{
   }
 
 change_img__backwards.onclick = () =>{
+  walkingSoundPlay();
   fadeFigure.style.filter = "blur(5rem)";
   image__discription.innerHTML = "";
   change_img__forwards.disabled = true;
@@ -104,6 +116,7 @@ change_img__backwards.onclick = () =>{
 }
 
 image__discription__button.onclick = () =>{
+  walkingSoundPlay();
   navPage.style.display = "none";
   locatiePage[i].style.display = "block";
   document.body.style.cursor = "none";
@@ -111,6 +124,7 @@ image__discription__button.onclick = () =>{
 
 for (let n = 0; n < backButton.length; n++) {
   backButton[n].onclick = () =>{
+    fireGun();
     setTimeout(() =>{locatiePage[i].style.display = "none";
     navPage.style.display = "grid";
     document.body.style.cursor = "default";}, 750)
@@ -124,9 +138,15 @@ const onMouseMove = (e) =>{
   }
 }
 
+const fireGun = () =>{
+  gunFire.currentTime = 5;
+  gunFire.play();
+  setTimeout(() => {gunFire.pause(); gunFire.currentTime = 0;}, 1500);
+}
+
 for (let n = 0; n < target.length; n++) {
   target[n].onclick = () =>{
-    setTimeout(() =>{console.log('bang');}, 500);
+    fireGun();
     setTimeout(() =>{
     if (target[n].classList.contains('targetShot') == false) {
       tCount++;
