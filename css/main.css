@@ -272,6 +272,57 @@ main{
   pointer-events: none;
 }
 
+.warning{
+  z-index: 5;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  background-color: black;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.warning__phone {
+  height: 5rem;
+  width: 10rem;
+  border: 3px solid white;
+  border-radius: 10px;
+  animation: rotate 1.5s ease-in-out infinite alternate;
+}
+
+.warning__message {
+  color: white;
+  font-size: 200%;
+  margin-top: 40px;
+  font-family: 'Roboto', sans-serif;
+}
+
+@keyframes rotate {
+  0% {
+		transform: rotate(0deg)
+	}
+	50% {
+		transform: rotate(0deg)
+	}
+	100% {
+		transform: rotate(-90deg)
+	}
+}
+
+@media only screen and (orientation: portrait) {
+  .warning{
+    display: flex;
+  }
+
+  main{
+    display: none;
+  }
+}
+
 
 @media (min-width: 1025px) {
   .scope{
