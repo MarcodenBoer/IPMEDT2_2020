@@ -2,6 +2,8 @@ const change_img__forwards = document.getElementById('js--change_img--forwards')
 const change_img__backwards = document.getElementById('js--change_img--backwards');
 const fadeFigure = document.getElementById('js--fadeFigure');
 const fadeFigure__image = document.getElementById('js--fadeFigure__image');
+const overlay = document.getElementById('js--overlay');
+const image__discription_box = document.getElementById('js--image__discription_box');
 const image__discription = document.getElementById('js--image__discription');
 const bubbles = document.getElementsByClassName('nav__bubbles__dot');
 const image__discription__button = document.getElementById("js--image__discription__button");
@@ -19,12 +21,14 @@ const infoBackground = document.getElementsByClassName('info__background');
 const gunFire = document.getElementById('js--gunFire');
 const walkingSound = document.getElementById('js--walkingSound');
 const wind = document.getElementById('js--wind');
+const endPage = document.getElementById('js--endPage');
+const campfireSound = document.getElementById('js--campfireSound');
 
 image__discription.innerHTML = "";
 const dotColor__active = "#eee";
 const dotColor__notActive = "#3c3c3c";
 
-tCount = 0;
+let tCount = 5;
 
 const list = ["./img/Forest.jpg", "./img/Moby-logo.png", "./img/Tower.jpg"];
 const description_list = ["Via dit bos pad zal ik bij het vluchtelingen kamp kunnen komen", "this be a fish >:(", "Vanaf deze toren heb ik een perfect uitzicht over het dorp"]
@@ -39,6 +43,28 @@ const walkingSoundPlay = () =>{
   wind.play();
   walkingSound.play();
   setTimeout(() => {walkingSound.pause(); walkingSound.currentTime = 0;}, 6000);
+}
+
+const removeUi = () =>{
+  overlay.style.opacity = 0;
+  change_img__forwards.style.opacity = 0;
+  change_img__backwards.style.opacity = 0;
+  image__discription_box.style.opacity = 0;
+  for (let i = 0; i < bubbles.length; i++) {
+    bubbles[i].style.opacity = 0;
+  }
+  fadeFigure__image.style.transform = 'scale(1.4)';
+}
+
+const restoreUi = () =>{
+  overlay.style.opacity = 1;
+  change_img__forwards.style.opacity = 1;
+  change_img__backwards.style.opacity = 1;
+  image__discription_box.style.opacity = 1;
+  for (let i = 0; i < bubbles.length; i++) {
+    bubbles[i].style.opacity = 1;
+  }
+  fadeFigure__image.style.transform = 'scale(1)';
 }
 
 change_img__forwards.onclick = () =>{
@@ -117,17 +143,26 @@ change_img__backwards.onclick = () =>{
 
 image__discription__button.onclick = () =>{
   walkingSoundPlay();
-  navPage.style.display = "none";
-  locatiePage[i].style.display = "block";
-  document.body.style.cursor = "none";
+  removeUi();
+  setTimeout(() =>{
+    navPage.style.display = "none";
+    locatiePage[x].style.display = "block";
+    document.body.style.cursor = "none";
+  },3000);
+  setTimeout(() =>{
+    for (let i = 0; i < scope.length; i++) {
+      scope[i].style.opacity = 1;
+    }
+  }, 3500);
 }
 
 for (let n = 0; n < backButton.length; n++) {
   backButton[n].onclick = () =>{
     fireGun();
-    setTimeout(() =>{locatiePage[i].style.display = "none";
+    setTimeout(() =>{locatiePage[x].style.display = "none";
     navPage.style.display = "grid";
     document.body.style.cursor = "default";}, 750)
+    setTimeout(() =>{restoreUi();}, 1000);
   }
 }
 
@@ -173,9 +208,21 @@ const closeInfo = () =>{
   for (let i = 0; i < info.length; i++) {
     info[i].style.opacity = '0';
     setTimeout(() =>{
-      info[i].style.display = 'none';
-      for (let i = 0; i < scope.length; i++) {
-        scope[i].style.display ='block';
+      if (tCount == 6) {
+        locatiePage[x].style.display = 'none';
+        endPage.style.display = 'flex';
+        targetCounter.style.display = 'none';
+        wind.pause();
+        wind.currentTime = 0;
+        campfireSound.loop = true;
+        campfireSound.volume = .7;
+        campfireSound.play();
+        endPage.style.cursor = 'default'
+      }else {
+        info[i].style.display = 'none';
+        for (let i = 0; i < scope.length; i++) {
+          scope[i].style.display ='block';
+        }
       }
     }, 500);
   }

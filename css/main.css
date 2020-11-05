@@ -31,6 +31,7 @@ main{
   width: 85%;
   height: 90vh;
   z-index: 2;
+  transition: opacity 3s;
 }
 
 .fadeFigure{
@@ -41,14 +42,16 @@ main{
   top: 0;
   left: 0;
   z-index: -1;
+  overflow: hidden;
 }
 
 .overlay{
   position: absolute;
   height: 100vh;
   width: 100vw;
-  z-index: 0;
+  z-index: 1;
   overflow: hidden;
+  transition: opacity 3s;
 }
 
 .overlay::after{
@@ -71,6 +74,7 @@ main{
 	height: 10rem;
   background-color: white;
 	clip-path: polygon(55% 28%, 100% 50%, 55% 72%, 0% 100%, 25% 50%, 0% 0%);
+  transition: opacity 3s;
 }
 
 .button--backwards{
@@ -80,12 +84,15 @@ main{
   width: 10rem;
 	height: 10rem;
   clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 45% 72%, 0% 50%, 45% 28%);
+  transition: opacity 3s;
 }
 
 .fadeFigure__image{
   height: 100%;
   width: 100%;
   background-size: cover;
+  transition: transform 3s;
+
 }
 
 .nav__bubbles{
@@ -100,6 +107,7 @@ main{
   display: inline-block;
   background-color: var(--html-text-color);
   margin: 0 1.25rem;
+  transition: opacity 3s;
 }
 
 .firstDot{background-color: var(--dot-color-active)}
@@ -113,6 +121,7 @@ main{
   outline-offset: .4rem;
   text-align: center;
   border-radius: .5rem;
+  transition: opacity 3s;
 }
 
 .image__discription > p{
@@ -245,6 +254,7 @@ main{
 }
 
 .scope{
+  opacity: 0;
   position: absolute;
   border-radius: 50%;
   height: 10rem;
@@ -253,7 +263,7 @@ main{
     linear-gradient(#000,#000),
     linear-gradient(#000,#000);
   background-position:center;
-  background-size: 50% 1rem,1rem 50%; /*thickness = 2px, length = 50% (25px)*/
+  background-size: 50% 1rem,1rem 50%;
   background-repeat:no-repeat;
   pointer-events: none;
   z-index: 2;
@@ -272,9 +282,70 @@ main{
   pointer-events: none;
 }
 
+.endPage{
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../img/campFire.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.endPage__tekst{
+  width: 85%;
+  height: 70%;
+  background-color: var(--overlay-color);
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0,1fr));
+  grid-template-rows: repeat(12, minmax(0,1fr));
+}
+
+.endPage__tekst > h1{
+  font-size: 5rem;
+  grid-column: 1 / span 12;
+  grid-row: 1 / span 2;
+  padding: 1rem;
+}
+
+.endPage__tekst > h2{
+  font-size: 2.5rem;
+  grid-column: 1 /span 12;
+  grid-row: 3 / span 2;
+  padding: 1rem;
+}
+
+.endPage__tekst > button{
+  font-size: 2rem;
+  padding: .5rem;
+  border-radius: .5rem;
+  border: none;
+}
+
+.endPage__tekst > button:nth-of-type(1){
+  grid-column: 2 /span 4;
+  grid-row: 6 / span 2;
+}
+
+.endPage__tekst > button:nth-of-type(2){
+  grid-column: 8 /span 4;
+  grid-row: 6 / span 2;
+}
+
+.endPage__tekst > button:nth-of-type(3){
+  grid-column: 2 /span 4;
+  grid-row: 10 / span 2;
+}
+
+.endPage__tekst > button:nth-of-type(4){
+  grid-column: 8 /span 4;
+  grid-row: 10 / span 2;
+}
+
 
 @media (min-width: 1025px) {
   .scope{
-    transition: none;
+    transition: opacity .5s;
   }
 }

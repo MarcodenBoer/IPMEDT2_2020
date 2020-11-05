@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <!-- TODO: transitie naar loactiescherm, einde met geluid en links naar info, info in info blokken, achtergronden, jusite foto's in nav, targets anders dan paarse rondjes, backButton stylen -->
+    <!-- TODO: info in info blokken, achtergronden, jusite foto's in nav, targets anders dan paarse rondjes, backButton stylen -->
     <meta charset="utf-8">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
     <title>Ipmedt2_2020</title>
   </head>
   <body>
@@ -11,12 +11,13 @@
       <audio id="js--gunFire" src="sounds/gunShot.ogg"></audio>
       <audio id="js--walkingSound" src="sounds/walking.wav"></audio>
       <audio id="js--wind" src="sounds/wind.wav" preload="auto"></audio>
+      <audio id="js--campfireSound" src="sounds/campfireSound.wav"></audio>
       <p class="targetCounter" id="js--targetCounter">Targets: 0/6</p>
       <div class="container" id="js--navPage">
         <button id="js--change_img--backwards" class="button--backwards" type="button" name="button"></button>
         <figure id="js--fadeFigure" class="fadeFigure">
-          <div class="overlay"></div>
-          <img id="js--fadeFigure__image" class="fadeFigure__image" src="./img/Forest.jpg" alt="">
+          <div class="overlay" id="js--overlay"></div>
+          <img id="js--fadeFigure__image" class="fadeFigure__image" src="/img/Forest.jpg" alt="">
         </figure>
         <button id="js--change_img--forwards" class="button--forwards" type="button" name="button"></button>
         <section class="nav__bubbles">
@@ -24,7 +25,7 @@
           <div class="nav__bubbles__dot"></div>
           <div class="nav__bubbles__dot"></div>
         </section>
-        <section class="image__discription">
+        <section class="image__discription" id="js--image__discription_box">
           <p id="js--image__discription"></p>
           <button id="js--image__discription__button" type="button" name="button">Naar het bospad</button>
         </section>
@@ -61,8 +62,18 @@
         </section>
         <button class="backButton" type="button" name="button">back</button>
       </div>
+      <div class="endPage" id="js--endPage">
+        <section class="endPage__tekst">
+          <h1>Dit was mijn verhaal</h1>
+          <h2>Wil je meer weten over Haron en zijn strijd tegen IS bekijk dan deze links</h2>
+          <button type="button" name="button">De documantaire die de bron is voor deze site</button>
+          <button type="button" name="button">Een interview met de maker van de documantaire</button>
+          <button type="button" name="button">Terug gaan om alles nog eens door te lezen</button>
+          <button type="button" name="button">De site vanaf het begin af spelen</button>
+        </section>
+      </div>
     </main>
-    <script src="./js/main.js">
+    <script src="/js/main.js">
 
     </script>
   </body>
