@@ -1,69 +1,39 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <!-- TODO: transitie naar loactiescherm, einde met geluid en links naar info, info in info blokken, achtergronden, jusite foto's in nav, targets anders dan paarse rondjes, backButton stylen -->
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="/css/main.css">
-    <title>Ipmedt2_2020</title>
-  </head>
-  <body>
-    <main>
-      <audio id="js--gunFire" src="sounds/gunShot.ogg"></audio>
-      <audio id="js--walkingSound" src="sounds/walking.wav"></audio>
-      <audio id="js--wind" src="sounds/wind.wav" preload="auto"></audio>
-      <p class="targetCounter" id="js--targetCounter">Targets: 0/6</p>
-      <div class="container" id="js--navPage">
-        <button id="js--change_img--backwards" class="button--backwards" type="button" name="button"></button>
-        <figure id="js--fadeFigure" class="fadeFigure">
-          <div class="overlay"></div>
-          <img id="js--fadeFigure__image" class="fadeFigure__image" src="/img/Forest.jpg" alt="">
-        </figure>
-        <button id="js--change_img--forwards" class="button--forwards" type="button" name="button"></button>
-        <section class="nav__bubbles">
-          <div class="nav__bubbles__dot firstDot"></div>
-          <div class="nav__bubbles__dot"></div>
-          <div class="nav__bubbles__dot"></div>
-        </section>
-        <section class="image__discription">
-          <p id="js--image__discription"></p>
-          <button id="js--image__discription__button" type="button" name="button">Naar het bospad</button>
-        </section>
-      </div>
-      <div class="woodsPage" id="js--woodsPage">
-        <div class="targetOne target"></div>
-        <div class="targetTwo target"></div>
-        <section class="info">
-          <div class="info__background"></div>
-          <div class="info__box">
-            <h1>Test</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <button type="button" name="button" class="closeInfoButton">close</button>
-          </div>
-        </section>
-        <div class="scope" id="js--scope"></div>
-        <button class="backButton" type="button" name="button">back</button>
-      </div>
-      <div class="fisch" id="js--fisch">
-        <p>fisch</p>
-        <div class="scope"></div>
-        <button class="backButton" type="button" name="button">back</button>
-      </div>
-      <div class="towerPage" id="js--towerPage">
-        <div class="towerTargetOne target"></div>
-        <div class="scope"></div>
-        <section class="info">
-          <div class="info__background"></div>
-          <div class="info__box">
-            <h1>Test</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <button type="button" name="button" class="closeInfoButton">close</button>
-          </div>
-        </section>
-        <button class="backButton" type="button" name="button">back</button>
-      </div>
-    </main>
-    <script src="/js/main.js">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <title>SnipeBook</title>
+</head>
+<body>
+  <nav class="navbar">
+    <ul class="navbar__list">
+      <li class="navbar__list__item">
+          <img class="navbar__list__item__logo" src="./img/sniper_logo.png" alt="SnipeBook Logo">
+      </li>
 
-    </script>
-  </body>
+      <li class="navbar__list__item">
+        <h1>SnipeBook</h1>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="post">
+    <article class="post__card">
+      <div class="post__card__profile">
+        <img class="post__card__profile__pic" src="./img/haron_pic.jpg" alt="Profile Picure Haron">
+        <p class="post__card__profile__text text--big">SniperBoy69</p>
+        <p class="post__card__profile__text text--small">Zojuist</p>
+      </div>
+      <p class="post__card__text" id="js--typeThis"></p>
+      <button class="post__card__button" id="js--cardButton">Start!</button>
+    </article>
+  </main>
+
+</body>
+<script src="./js/main.js"></script>
 </html>

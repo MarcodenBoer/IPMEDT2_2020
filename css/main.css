@@ -15,6 +15,7 @@
 html{
   font-size: 62.5%;
   color: var(--html-text-color);
+  background-color: #eeeeee;
 }
 
 main{
@@ -276,5 +277,114 @@ main{
 @media (min-width: 1025px) {
   .scope{
     transition: none;
+  }
+}
+
+h1{
+  font-size: 2.4rem;
+  font-family: serif;
+  font-family: 'Questrial', sans-serif;
+}
+
+.navbar{
+  overflow: hidden;
+  background-color: #EDC9AF;
+}
+
+.navbar__list{
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0rem;
+  padding: 0;
+}
+
+.navbar__list__item{
+  float: left;
+  text-align: center;
+  padding: 14px 14px;
+  text-decoration: none;
+}
+
+.navbar__list__item__logo{
+  height: 5rem;
+  width: 5rem;
+  margin-left: 2rem
+}
+
+.post{
+  display: flex;
+  justify-content: center;
+  align-content: : center;
+}
+
+.post__card{
+  padding: 2rem;
+  overflow: hidden;
+  background-color: white;
+  margin: 6rem 4rem;
+  width: 80vw;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+}
+
+.post__card__profile{
+  width: 90%;
+  height: 8rem;
+}
+
+.post__card__profile__pic{
+  width: 8rem;
+  height: 8rem;
+  float: left;
+  margin-right: 2rem;
+  border-radius: 5px;
+}
+
+.post__card__profile__text{
+  font-family: 'Roboto', sans-serif;
+  display: block;
+}
+
+.post__card__text{
+  margin: 2rem 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 175%;
+}
+
+.post__card__button{
+  display: none;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 175%;
+  border-radius: 1rem;
+  background-color: #EDC9AF;
+  transition: 0.5s;
+}
+
+.post__card__button:hover{
+  background-color: #bf7947;
+  cursor: pointer;
+}
+
+.post__card__button:active{
+  background-color: #734626;
+  color: #eeeeee;
+}
+
+.text--big{
+  font-size: 200%;
+  font-weight: 600;
+}
+
+.text--small{
+  font-size: 150%;
+  color: grey;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 800px) {
+  .post__card{
+    width: 40vw;
   }
 }
