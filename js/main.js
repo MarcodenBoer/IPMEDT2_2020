@@ -26,7 +26,7 @@ const dotColor__notActive = "#3c3c3c";
 
 tCount = 0;
 
-const list = ["/img/Forest.jpg", "/img/Moby-logo.png", "/img/Tower.jpg"];
+const list = ["./img/Forest.jpg", "./img/Moby-logo.png", "./img/Tower.jpg"];
 const description_list = ["Via dit bos pad zal ik bij het vluchtelingen kamp kunnen komen", "this be a fish >:(", "Vanaf deze toren heb ik een perfect uitzicht over het dorp"]
 const locatie = ["het bospad", "de fisch", "de wachttoren"];
 const locatiePage = [woodsPage, fisch, towerPage];
