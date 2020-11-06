@@ -226,14 +226,14 @@ for (let n = 0; n < target.length; n++) {
           }
         break;
       case target[2]:
-          info__box.innerHTML = "<h1>Kobani</h1><p>De woonplaats van Haron zelf, Kobani of 'Ayn al-'Arab . Een stad in het noord-oosten van Syrië op de grens met Turkijë. De stad was van september 2014 tot maart 2015 het toneel van gevechten tussen Koerdische strijdkrachten en terreurgroep IS, tijdens de Syrische Burgeroorlog. Dit leidde tot een grote stroom vluchtelingen aan de grens met Turkije. Door het vele vechten in en rondom de stad is het sinds 2012 onder controle van de Koerdische Volksbeschermingseenheden(YPG)</p><img id = 'js--kobaniOnMap' src = '/img/kobaniMaps.jpg' height = '80%' width = '80%'></img><button type='button' name='button' id='js--closeInfoButton'>close</button>"
+          info__box.innerHTML = "<h1>Kobani</h1><p>De woonplaats van Haron zelf, Kobani of 'Ayn al-'Arab . Een stad in het noord-oosten van Syrië op de grens met Turkijë. De stad was van september 2014 tot maart 2015 het toneel van gevechten tussen Koerdische strijdkrachten en terreurgroep IS, tijdens de Syrische Burgeroorlog. Dit leidde tot een grote stroom vluchtelingen aan de grens met Turkije. Door het vele vechten in en rondom de stad is het sinds 2012 onder controle van de Koerdische Volksbeschermingseenheden(YPG)</p><img id = 'js--kobaniOnMap' src = './img/kobaniMaps.jpg' height = '80%' width = '80%'></img><button type='button' name='button' id='js--closeInfoButton'>close</button>"
           document.getElementById('js--kobaniOnMap').style.padding = '1rem';
             document.getElementById('js--closeInfoButton').onclick = () =>{
             closeInfo();
           }
         break;
       case target[3]:
-          info__box.innerHTML = "<h1>Bom aanslagen</h1><p id = 'js--warning'><b>! Kijk uit, schokende beelden !</b></p> <video id = 'js--video' width = '90%' height = '70%' controls><source src = '/vid/bomAanslag.mp4' type='video/mp4'></video><p>In dit video fragment worden meerdere bom aanslagen door IS laten zien. Dit is een van de manieren waarop IS oorlog voerd. zelfs als ze moeten terugtrekken weten ze nog wel tereur te zaaien in de gebieden die veilig horen te zijn</p><button type='button' name='button' id='js--closeInfoButton'>close</button>"
+          info__box.innerHTML = "<h1>Bom aanslagen</h1><p id = 'js--warning'><b>! Kijk uit, schokende beelden !</b></p> <video id = 'js--video' width = '90%' height = '70%' controls><source src = './vid/bomAanslag.mp4' type='video/mp4'></video><p>In dit video fragment worden meerdere bom aanslagen door IS laten zien. Dit is een van de manieren waarop IS oorlog voerd. zelfs als ze moeten terugtrekken weten ze nog wel tereur te zaaien in de gebieden die veilig horen te zijn</p><button type='button' name='button' id='js--closeInfoButton'>close</button>"
           document.getElementById('js--warning').style.textAlign = 'center';
           document.getElementById('js--video').style.padding = '1rem';
           document.getElementById('js--closeInfoButton').onclick = () =>{
@@ -241,7 +241,7 @@ for (let n = 0; n < target.length; n++) {
           }
         break;
       case target[4]:
-          info__box.innerHTML = "<h1>Sniper vaardigheden</h1><p>Welke skills heb je nou precies nodig om een effectieve scherpschutter te zijn?<br>Geduld: Als sniper moet je ontzettend lang op de zelfde plek kunnen blijven wachten, wachtend op je doelwit. dit kan soms wel uren tot dagen duren!</p><img width = '40%' height = '60%'  src = '/img/snipersNest.jpg'></img><p>Soms ook in kleine ruimtes zoals deze.<br><br>Een vaste hand: Je bent een scherpschutter dus je doelwitten zijn meestal op verre afstanden te vinden. Hiervoor moet je je geweer goed stil kunnen houden want op zulke afstanden kan elke bewegen leiden tot het missen van je target.<br><br> Wiskunde: Jaja, zelfs als scherpschutter heb je een goede hoop wiskunde nodig. Zo moet je de afstand naar je doelwit kunnen inschatten om het vallen van je kogel tegen te gaan. en moet je de snelheid van je doelwit ook meerekenen anders schiet je voor of achter je target</p><button type='button' name='button' id='js--closeInfoButton'>close</button>"
+          info__box.innerHTML = "<h1>Sniper vaardigheden</h1><p>Welke skills heb je nou precies nodig om een effectieve scherpschutter te zijn?<br>Geduld: Als sniper moet je ontzettend lang op de zelfde plek kunnen blijven wachten, wachtend op je doelwit. dit kan soms wel uren tot dagen duren!</p><img width = '40%' height = '60%'  src = './img/snipersNest.jpg'></img><p>Soms ook in kleine ruimtes zoals deze.<br><br>Een vaste hand: Je bent een scherpschutter dus je doelwitten zijn meestal op verre afstanden te vinden. Hiervoor moet je je geweer goed stil kunnen houden want op zulke afstanden kan elke bewegen leiden tot het missen van je target.<br><br> Wiskunde: Jaja, zelfs als scherpschutter heb je een goede hoop wiskunde nodig. Zo moet je de afstand naar je doelwit kunnen inschatten om het vallen van je kogel tegen te gaan. en moet je de snelheid van je doelwit ook meerekenen anders schiet je voor of achter je target</p><button type='button' name='button' id='js--closeInfoButton'>close</button>"
           document.getElementById('js--closeInfoButton').onclick = () =>{
             closeInfo();
           }
@@ -282,7 +282,7 @@ child.onclick = () =>{
   breath.play();
   setTimeout(() =>{
     fireGun();
-    info__box.innerHTML = "<h1>Kinder Soldaten</h1><video id = 'js--videoSniper' width = '90%' height = '70%' controls><source src = '/vid/sniper.mp4' type='video/mp4'></video><p>Een vreselijke gedachten maar helaas wel de realiteit. IS (en andere terreurgroepen) gebruiken zelfs de onschuld van kinderen en vrouwen om hun doelen te bereiken</p><button type='button' name='button' id='js--closeInfoButton'>close</button>"
+    info__box.innerHTML = "<h1>Kinder Soldaten</h1><video id = 'js--videoSniper' width = '90%' height = '70%' controls><source src = './vid/sniper.mp4' type='video/mp4'></video><p>Een vreselijke gedachten maar helaas wel de realiteit. IS (en andere terreurgroepen) gebruiken zelfs de onschuld van kinderen en vrouwen om hun doelen te bereiken</p><button type='button' name='button' id='js--closeInfoButton'>close</button>"
     document.getElementById('js--closeInfoButton').onclick = () =>{
       closeInfo();
     };

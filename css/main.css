@@ -1,0 +1,626 @@
+*, *::before, *::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --main-bg-color: #080808;
+  --html-text-color: #eee;
+  --dot-color-active: #3c3c3c;
+  --overlay-color: rgba(0,0,0,50%);
+  --button-color: #ddd;
+}
+
+html{
+  font-size: 62.5%;
+  color: var(--html-text-color);
+  font-family: 'Roboto', sans-serif;
+}
+
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: repeat(12,minmax(0,1fr));
+  grid-template-rows: repeat(12, minmax(0,1fr));
+  width: 85%;
+  height: 90vh;
+  z-index: 2;
+  transition: opacity 3s;
+}
+
+.fadeFigure{
+  height: 100vh;
+  width: 100vw;
+  transition: 3s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.overlay{
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  overflow: hidden;
+  transition: opacity 3s;
+}
+
+.overlay::after{
+  content: "";
+  position: absolute;
+  left: 36vw;
+  top: 12vh;
+  height: 27.5rem;
+  width: 27.5rem;
+  border-radius: 100%;
+  box-shadow: 0px 0px 0px 2000px var(--overlay-color);
+}
+
+.button--forwards{
+  position: relative;
+  right: 3rem;
+  grid-column: 11 / span 2;
+  grid-row: 4 / span 1;
+  width: 10rem;
+	height: 10rem;
+  background-color: var(--button-color);
+	clip-path: polygon(55% 28%, 100% 50%, 55% 72%, 0% 100%, 25% 50%, 0% 0%);
+  transition: opacity 3s;
+}
+
+.button--backwards{
+  position: relative;
+  grid-column: 2 / span 2;
+  grid-row: 4 / span 1;
+  width: 10rem;
+	height: 10rem;
+  background-color: var(--button-color);
+  clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 45% 72%, 0% 50%, 45% 28%);
+  transition: opacity 3s;
+}
+
+.fadeFigure__image{
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  transition: transform 3s;
+}
+
+.nav__bubbles{
+  grid-column: 6 / span 3;
+  grid-row: 1 / span 1;
+}
+
+.nav__bubbles__dot{
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: var(--html-text-color);
+  margin: 0 1.25rem;
+  transition: opacity 3s;
+}
+
+.firstDot{background-color: var(--dot-color-active)}
+
+.image__discription{
+  grid-column: 2 / span 10;
+  grid-row: 9 / span 4;
+  background-color: var(--overlay-color);
+  border: .2rem solid var(--html-text-color);
+  outline: .2rem solid var(--html-text-color);
+  outline-offset: .4rem;
+  text-align: center;
+  border-radius: .5rem;
+  transition: opacity 3s;
+}
+
+.image__discription > p{
+  font-size: 3rem;
+  width: 100%;
+  padding: 1rem
+}
+
+.image__discription > button{
+  width: 60%;
+  font-size: 2rem;
+  padding: 1.5rem;
+  transition: .5s;
+  border-radius: .5rem;
+  border: .2rem solid var(--main-bg-color);
+  background-color: var(--button-color);
+  animation-name: pulse;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+.image__discription > button:hover{
+  background-color: var(--main-bg-color);
+  color: var(--html-text-color);
+  border: .2rem solid var(--html-text-color);
+}
+
+.image__discription > button:active{
+  transform: translateY(.5rem);
+  transition: none;
+}
+
+.target{
+  position: absolute;
+  filter: brightness(1.5);
+  transition: transform .5s
+}
+
+.target:hover{
+  transform: scale(1.1);
+}
+
+.child{
+  height: 20rem;
+  width: 7.5rem;
+  position: absolute;
+  top: 32rem;
+  left: 26%;
+}
+
+.targetShot{
+  filter: grayscale(1);
+}
+
+.targetOne{
+  left: 31%;
+  top: 23%;
+  height: 7rem;
+  width: 7rem;
+}
+
+.targetTwo{
+  left: 57%;
+  top: 38%;
+  height: 7rem;
+  width: 7rem;
+}
+
+.targetKobani{
+  height: 9rem;
+  width: 9rem;
+  left: 20%;
+  top: 59%;
+}
+
+.targetTree{
+  left: 57%;
+  top: 35%;
+  height: 12rem;
+  width: 12rem;
+}
+
+.targetFour{
+  left: 17%;
+  top: 8%;
+  height: 12rem;
+  width: 12rem;
+}
+
+.targetFive{
+  left: 72%;
+  top: 27%;
+  height: 9rem;
+  width: 9rem;
+}
+
+.targetSix{
+  left: 17%;
+  top: 7%;
+  height: 10rem;
+  width: 10rem;
+}
+
+.info{
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  transition: opacity .5s;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.info__background{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 3
+}
+
+.info__box{
+  width: 80%;
+  height: 60%;
+  border: .2rem solid var(--html-text-color);
+  outline: .2rem solid var(--html-text-color);
+  outline-offset: .4rem;
+  text-align: center;
+  border-radius: .5rem;
+  background-color: var(--overlay-color);
+  z-index: 4;
+  overflow: auto;
+}
+
+.info__box > h1{
+  font-size: 4rem;
+  padding: 1.5rem;
+}
+
+.info__box  p{
+  font-size: 2.7rem;
+  text-align: left;
+  width: 80%;
+  margin-left: 12.5%;
+}
+
+.warning{text-align: center;}
+
+.info__box > button{
+  width: 75%;
+  font-size: 4rem;
+  border: none;
+  border-radius: .5rem;
+  margin: 1.5rem;
+  border: .2rem solid var(--main-bg-color);
+  background-color: var(--button-color);
+}
+
+.targetCounter{
+  position: absolute;
+  top: 1rem;
+  right: 3.5rem;
+  font-size: 2rem;
+  color: var(--html-text-color);
+  z-index: 3;
+}
+
+.backButton{
+  position: absolute;
+  top: 80vh;
+  left: 86vw;
+  height: 15vh;
+  width: 15vh;
+  border-radius: 50%;
+  border: none;
+  background-image: url("../img/verrekijker.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.backButton:hover{
+  cursor: none;
+}
+
+.locatieBackground{
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.locatieBackground > img{
+  width: 100%;
+  height: 100%;
+}
+
+.centrePage{
+  display: none;
+}
+
+.suburbsPage{
+  display: none;
+}
+
+.outskirtsPage{
+  display: none;
+}
+
+.scope{
+  opacity: 0;
+  position: absolute;
+  border-radius: 50%;
+  height: 10rem;
+  width: 10rem;
+  background:
+    linear-gradient(#000,#000),
+    linear-gradient(#000,#000);
+  background-position:center;
+  background-size: 50% 1rem,1rem 50%;
+  background-repeat:no-repeat;
+  pointer-events: none;
+  z-index: 2;
+  transition: all .5s;
+}
+
+.scope::after{
+  content: "";
+  position: absolute;
+  top: calc(-27.5rem/3);
+  left: calc(-27.5rem/3);
+  height: 27.5rem;
+  width: 27.5rem;
+  border-radius: 100%;
+  box-shadow: 0px 0px 0px 2000px var(--overlay-color);
+  pointer-events: none;
+}
+
+.endPage{
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../img/campFire.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.endPage__tekst{
+  width: 85%;
+  height: 70%;
+  background-color: var(--overlay-color);
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0,1fr));
+  grid-template-rows: repeat(12, minmax(0,1fr));
+}
+
+.endPage__tekst > h1{
+  font-size: 4rem;
+  grid-column: 1 / span 12;
+  grid-row: 1 / span 2;
+  padding: 1rem;
+}
+
+.endPage__tekst > h2{
+  font-size: 2.5rem;
+  grid-column: 1 /span 12;
+  grid-row: 3 / span 2;
+  padding: 1rem;
+}
+
+.endPage__tekst > button{
+  font-size: 2rem;
+  padding: .5rem;
+  border-radius: .5rem;
+  border: .2rem solid var(--main-bg-color);
+  background-color: var(--button-color);
+}
+
+.endPage__tekst > button:hover{
+  background-color: var(--main-bg-color);
+  color: var(--html-text-color);
+  border: .2rem solid var(--html-text-color);
+}
+
+.endPage__tekst > button:nth-of-type(1){
+  grid-column: 2 /span 4;
+  grid-row: 6 / span 2;
+}
+
+.endPage__tekst > button:nth-of-type(2){
+  grid-column: 8 /span 4;
+  grid-row: 6 / span 2;
+}
+
+.endPage__tekst > button:nth-of-type(3){
+  grid-column: 2 /span 4;
+  grid-row: 10 / span 2;
+}
+
+.endPage__tekst > button:nth-of-type(4){
+  grid-column: 8 /span 4;
+  grid-row: 10 / span 2;
+}
+
+@keyframes pulse {
+  from{
+    transform: scale(1);
+  }
+  to{
+    transform: scale(1.1);
+  }
+}
+
+.warningTurn{
+  z-index: 5;
+  width: 100%;
+  max-width: 100vw;
+  max-height: 100vh;
+  background-color: black;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.warningTurn__phone {
+  height: 5rem;
+  width: 10rem;
+  border: 3px solid white;
+  border-radius: 10px;
+  animation: rotate 1.5s ease-in-out infinite alternate;
+}
+
+.warningTurn__message {
+  color: white;
+  font-size: 1em;
+  margin-top: 40px;
+  font-family: 'Roboto', sans-serif;
+}
+
+@keyframes rotate {
+  0% {
+		transform: rotate(0deg)
+	}
+	50% {
+		transform: rotate(0deg)
+	}
+	100% {
+		transform: rotate(-90deg)
+	}
+}
+
+@media only screen and (orientation: portrait) {
+  .warningTurn{
+    display: flex;
+  }
+
+  main{
+    display: none;
+  }
+}
+
+
+@media query (min-width: 850px){
+  .overlay::after{
+    left: 40vw;
+    top: 15vh;
+    height: 20.5rem;
+    width: 20.5rem;
+  }
+
+  .image__discription > p{
+    font-size: 2rem;
+  }
+}
+
+
+@media (min-width: 1025px) {
+  .scope{
+    transition: opacity .5s;
+  }
+
+  .image__discription{
+    grid-column: 3 / span 8;
+  }
+
+  .image__discription > p{
+    font-size: 3.8rem;
+    padding: 2rem;
+  }
+
+  .image__discription > button{
+    font-size: 3rem;
+  }
+
+  .overlay::after{
+    height: 37.5rem;
+    width: 37.5rem;
+    left: 37vw
+  }
+
+  .nav__bubbles{
+    grid-column: 6 / span 4
+  }
+
+  .nav__bubbles__dot{
+    margin: 0 2.25rem
+  }
+
+  .targetOne{
+    left: 31%;
+    top: 23.5%;
+    height: 9rem;
+    width: 9rem;
+  }
+
+  .targetTwo{
+    left: 61%;
+    top: 41%;
+    height: 8rem;
+    width: 8rem;
+  }
+
+  .targetKobani{
+    left: 20%;
+    top: 60%;
+    height: 12rem;
+    width: 12rem;
+  }
+
+  .backButton{
+    top: 73vh;
+    left: 84vw;
+    height: 18vh;
+    width: 18vh;
+  }
+
+  .targetTree{
+    left: 61%;
+    top: 41%
+  }
+
+  .targetFour{
+    left: 19%;
+    top: 1%;
+    height: 14rem;
+    width: 14rem;
+  }
+
+  .child{
+    height: 26rem;
+    width: 12.5rem;
+    top: 45rem;
+  }
+
+  .targetFive{
+    left: 75%;
+    top: 21%;
+    height: 12rem;
+    width: 12rem;
+  }
+
+  .targetSix{
+    left: 18%;
+    top: 9%;
+    height: 12rem;
+    width: 12rem;
+  }
+
+  .info__box{
+    width: 70%;
+    height: 70%;
+  }
+
+  .info__box > button{
+    transition: all .5s;
+  }
+
+  .info__box > button:hover{
+    background-color: var(--main-bg-color);
+    color: var(--html-text-color);
+    border: .2rem solid var(--html-text-color);
+  }
+
+  .endPage__tekst > h1{
+    font-size: 5rem;
+    grid-column: 2 / span 12;
+    padding: 1rem 0;
+  }
+
+  .endPage__tekst > h2{
+    grid-column: 2 / span 12;
+    padding: 1rem 0;
+  }
+}
