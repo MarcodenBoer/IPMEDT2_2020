@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <!-- TODO: info in info blokken, achtergronden, jusite foto's in nav, targets anders dan paarse rondjes, backButton stylen -->
+    <!-- TODO: info in info blokken, achtergronden -->
     <meta charset="utf-8">
     <link rel="stylesheet" href="/css/main.css">
     <title>Ipmedt2_2020</title>
@@ -17,7 +17,7 @@
         <button id="js--change_img--backwards" class="button--backwards" type="button" name="button"></button>
         <figure id="js--fadeFigure" class="fadeFigure">
           <div class="overlay" id="js--overlay"></div>
-          <img id="js--fadeFigure__image" class="fadeFigure__image" src="/img/Forest.jpg" alt="">
+          <img id="js--fadeFigure__image" class="fadeFigure__image" src="/img/cityBg.jpg" alt="">
         </figure>
         <button id="js--change_img--forwards" class="button--forwards" type="button" name="button"></button>
         <section class="nav__bubbles">
@@ -27,12 +27,15 @@
         </section>
         <section class="image__discription" id="js--image__discription_box">
           <p id="js--image__discription"></p>
-          <button id="js--image__discription__button" type="button" name="button">Naar het bospad</button>
+          <button id="js--image__discription__button" type="button" name="button">Naar het centrum</button>
         </section>
       </div>
-      <div class="woodsPage" id="js--woodsPage">
-        <div class="targetOne target"></div>
-        <div class="targetTwo target"></div>
+      <div class="centrePage locatie" id="js--woodsPage">
+        <figure class="locatieBackground">
+          <img srcset = "img/ruinedCity_640.jpg 640w, img/ruinedCity_1280.jpg 1280w, img/ruinedCity_1920.jpg 1920w" sizes = "(min-width: 1500px) 1920px, (min-width: 1000px) 1280px, 640px" src="/img/ruinedCity_640.jpg" alt="">
+        </figure>
+        <img src="img/terrorist_ak.png" class="targetOne target"></img>
+        <img src="img/terrorist_ak2.png" class="targetTwo target"></img>
         <section class="info">
           <div class="info__background"></div>
           <div class="info__box">
@@ -42,14 +45,20 @@
           </div>
         </section>
         <div class="scope" id="js--scope"></div>
-        <button class="backButton" type="button" name="button">back</button>
+        <button class="backButton" type="button" name="button"></button>
       </div>
-      <div class="fisch" id="js--fisch">
-        <p>fisch</p>
+      <div class="suburbsPage locatie" id="js--fisch">
+        <figure class="locatieBackground">
+          <img src="/img/suburbs.jpg" alt="">
+        </figure>
+        <div class="child" id="js--child"></div>
         <div class="scope"></div>
-        <button class="backButton" type="button" name="button">back</button>
+        <button class="backButton" type="button" name="button"></button>
       </div>
-      <div class="towerPage" id="js--towerPage">
+      <div class="outskirtsPage locatie" id="js--towerPage">
+        <figure class="locatieBackground">
+          <img src="/img/" alt="">
+        </figure>
         <div class="towerTargetOne target"></div>
         <div class="scope"></div>
         <section class="info">
@@ -60,7 +69,7 @@
             <button type="button" name="button" class="closeInfoButton">close</button>
           </div>
         </section>
-        <button class="backButton" type="button" name="button">back</button>
+        <button class="backButton" type="button" name="button"></button>
       </div>
       <div class="endPage" id="js--endPage">
         <section class="endPage__tekst">

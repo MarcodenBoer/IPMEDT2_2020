@@ -23,24 +23,27 @@ const walkingSound = document.getElementById('js--walkingSound');
 const wind = document.getElementById('js--wind');
 const endPage = document.getElementById('js--endPage');
 const campfireSound = document.getElementById('js--campfireSound');
+const child = document.getElementById('js--child');
 
 image__discription.innerHTML = "";
 const dotColor__active = "#eee";
 const dotColor__notActive = "#3c3c3c";
 
-let tCount = 5;
+let tCount = 0;
 
-const list = ["./img/Forest.jpg", "./img/Moby-logo.png", "./img/Tower.jpg"];
-const description_list = ["Via dit bos pad zal ik bij het vluchtelingen kamp kunnen komen", "this be a fish >:(", "Vanaf deze toren heb ik een perfect uitzicht over het dorp"]
-const locatie = ["het bospad", "de fisch", "de wachttoren"];
+const list = ["./img/cityBg.jpg", "./img/streetView.jpg", "./img/suburbsBg.jpg"];
+const description_list = ["het centrum van Kobani, Hier is het meest gevochten tussen IS en het Koerdische verzet", "Deze straat en stukje buiten het centrum is laatst nog door IS gebombardeerd", "Een buitenwijk zo ver van het centrum en toch zo hard getroffen door IS"]
+const locatie = ["het centrum", "de buitenwijk", "de buitenwijk"];
 const locatiePage = [woodsPage, fisch, towerPage];
+const targetInfo = ["1", "2", "3"]
 let i = 0;
 let x = 0;
 
+wind.loop = true;
+wind.play();
+
 const walkingSoundPlay = () =>{
   // TODO: zet wind play op start knop van kevin
-  wind.loop = true;
-  wind.play();
   walkingSound.play();
   setTimeout(() => {walkingSound.pause(); walkingSound.currentTime = 0;}, 6000);
 }
@@ -202,6 +205,10 @@ for (let n = 0; n < target.length; n++) {
       info[i].style['pointer-events'] = "auto";
     }}, 750);
   }
+}
+
+child.onclick = () =>{
+  console.log('wat');
 }
 
 const closeInfo = () =>{
