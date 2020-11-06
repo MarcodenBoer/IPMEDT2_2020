@@ -154,6 +154,10 @@ h1{
   display: none;
 }
 
+.input--show{
+  display: block;
+}
+
 @media (min-width: 800px) {
   .post__card{
     width: 40vw;

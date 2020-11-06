@@ -24,7 +24,8 @@ window.onload = (event) => {
 
   commentButton.onclick = () =>{
     if (completed == true) {
-      console.log('test');
+      textarea.classList.add('input--show');
+      setTimeout(typeTextarea, 1000);
     }
   };
 
@@ -50,7 +51,7 @@ window.onload = (event) => {
       setTimeout(typeTextarea, speed);
     }
     else{
-      //redirtect to mainpage
+      window.location.href = "mainPage.html";
     }
   }
 
