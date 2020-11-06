@@ -25,6 +25,11 @@ const endPage = document.getElementById('js--endPage');
 const campfireSound = document.getElementById('js--campfireSound');
 const child = document.getElementById('js--child');
 const info__box = document.getElementById('js--info__box');
+const endPageDocuButton = document.getElementById('js--endPageDocuButton');
+const endpageBackButton = document.getElementById('js--endpageBackButton');
+const endPageInteviewButton = document.getElementById('js--endPageInteviewButton');
+const endPageResetButton = document.getElementById('js--endPageResetButton');
+const breath = document.getElementById('js--breath');
 
 image__discription.innerHTML = "";
 const dotColor__active = "#eee";
@@ -204,8 +209,9 @@ const fireGun = () =>{
 
 for (let n = 0; n < target.length; n++) {
   target[n].onclick = () =>{
-    fireGun();
+    breath.play();
     setTimeout(() =>{
+    fireGun();
     if (target[n].classList.contains('targetShot') == false) {
       tCount++;
       targetCounter.innerHTML = "Targets: " + tCount + "/7";
@@ -231,7 +237,7 @@ for (let n = 0; n < target.length; n++) {
           }
         break;
       case target[3]:
-          info__box.innerHTML = "<h1>Bom aanslagen</h1><p id = 'js--warning'><b>! Kijk uit, schokende beelden !</b></p> <video id = 'js--video' width = '90%' height = '50%' controls><source src = '/vid/bomAanslag.mp4' type='video/mp4'></video><p>In dit video fragment worden meerdere bom aanslagen door IS laten zien. Dit is een van de manieren waarop IS oorlog voerd. zelfs als ze moeten terugtrekken weten ze nog wel tereur te zaaien in de gebieden die veilig horen te zijn</p><button type='button' name='button' id='js--closeInfoButton'>close</button>"
+          info__box.innerHTML = "<h1>Bom aanslagen</h1><p id = 'js--warning'><b>! Kijk uit, schokende beelden !</b></p> <video id = 'js--video' width = '90%' height = '70%' controls><source src = '/vid/bomAanslag.mp4' type='video/mp4'></video><p>In dit video fragment worden meerdere bom aanslagen door IS laten zien. Dit is een van de manieren waarop IS oorlog voerd. zelfs als ze moeten terugtrekken weten ze nog wel tereur te zaaien in de gebieden die veilig horen te zijn</p><button type='button' name='button' id='js--closeInfoButton'>close</button>"
           document.getElementById('js--warning').style.textAlign = 'center';
           document.getElementById('js--video').style.padding = '1rem';
           document.getElementById('js--closeInfoButton').onclick = () =>{
@@ -277,7 +283,27 @@ for (let n = 0; n < target.length; n++) {
 }
 
 child.onclick = () =>{
-  console.log('wat');
+  breath.play();
+  setTimeout(() =>{
+    fireGun();
+    info__box.innerHTML = "<h1>Kinder Soldaten</h1><video id = 'js--videoSniper' width = '90%' height = '70%' controls><source src = '/vid/sniper.mp4' type='video/mp4'></video><p>Een vreselijke gedachten maar helaas wel de realiteit. IS (en andere terreurgroepen) gebruiken zelfs de onschuld van kinderen en vrouwen om hun doelen te bereiken</p><button type='button' name='button' id='js--closeInfoButton'>close</button>"
+    document.getElementById('js--closeInfoButton').onclick = () =>{
+      closeInfo();
+    };
+    for (let i = 0; i < info.length; i++) {
+      info[i].style.display = "flex";
+      setTimeout(() =>{
+        info[i].style.opacity = '1';
+      }, 500);
+    }
+    for (let i = 0; i < scope.length; i++) {
+      scope[i].style.display ='none';
+    }
+    for (let i = 0; i < info.length; i++) {
+      info[i].style.cursor = 'default';
+      info[i].style['pointer-events'] = "auto";
+    }
+  },750);
 }
 
 const closeInfo = () =>{
@@ -285,6 +311,7 @@ const closeInfo = () =>{
     info[i].style.opacity = '0';
     setTimeout(() =>{
       if (tCount == 7) {
+        info[i].style.display = 'none';
         locatiePage[x].style.display = 'none';
         endPage.style.display = 'flex';
         targetCounter.style.display = 'none';
@@ -314,6 +341,25 @@ for (let i = 0; i < infoBackground.length; i++) {
   infoBackground[i].onclick = () =>{
     closeInfo();
   }
+}
+
+endPageDocuButton.onclick = () =>{
+  location.href = "https://www.youtube.com/watch?v=0H-NNvNbW58&has_verified=1&ab_channel=JourneymanPictures"
+}
+
+endPageInteviewButton.onclick = () =>{
+  location.href = "https://www.human.nl/lees/2019/interview-reber-dosky.html"
+}
+
+endpageBackButton.onclick = () =>{
+  endPage.style.display = 'none';
+  navPage.style.display = 'grid';
+  restoreUi();
+  targetCounter.style.display = 'block';
+}
+
+endPageResetButton.onclick = () =>{
+  location.href = ""
 }
 
 document.addEventListener('mousemove', onMouseMove);

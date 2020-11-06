@@ -94,7 +94,6 @@ main{
   width: 100%;
   background-size: cover;
   transition: transform 3s;
-
 }
 
 .nav__bubbles{
@@ -189,10 +188,10 @@ main{
 }
 
 .targetKobani{
-  height: 10rem;
-  width: 10rem;
-  left: 0;
-  top: 0;
+  height: 9rem;
+  width: 9rem;
+  left: 20%;
+  top: 59%;
 }
 
 .targetTree{
@@ -207,7 +206,6 @@ main{
   top: 8%;
   height: 12rem;
   width: 12rem;
-  filter: brightness(2);
 }
 
 .targetFive{
