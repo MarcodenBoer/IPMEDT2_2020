@@ -3,7 +3,7 @@ window.onload = (event) => {
   let e = 0;
   let completed = false;
   const txt = "Hi, << Ik heb dringend hulp nodig! Mijn volk word aangevallen door IS, en ik zoek mensen die samen met mij mijn volk willen verdedigen tegen IS. < De Koerden worden al jaren geteisterd door moord en terreur van IS. En ik vecht daar tegen, als scherpschutter. Ik bescherm naast het volk ook mijn stad, Kobani. Dat is een grote stad in Syrië. Het ligt tegen de grens van Turkije. < Denk jij dat je het in je hebt om mij te helpen in deze strijd? Reageer dan onder deze post en wie weet neem ik je mee op avontuur. << groet, Haron < مع خالص التقدير ، هارون"
-  const comment = 'Hi Haron, \nIk zou graag met jou mee gaan op avontuur';
+  const comment = 'Hi Haron, \nIk zou graag met jou mee gaan op avontuur. Ik weet zeker dat ik kan helpen in de strijd tegen IS. \n Lets go!';
   let speed = 45;
   const likeButton = document.getElementById('js--like');
   const commentButton = document.getElementById('js--comment');
