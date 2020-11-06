@@ -89,7 +89,6 @@ change_img__forwards.onclick = () =>{
   fadeFigure.style.filter = "blur(5rem)";
   image__discription.innerHTML = "";
   change_img__forwards.setAttribute('disabled', 'true');
-  change_img__forwards.style.opacity = .5;
   change_img__backwards.setAttribute('disabled', 'true');
   setTimeout(function () {
     if (i == list.length - 1) {
@@ -115,7 +114,6 @@ change_img__forwards.onclick = () =>{
     },3000);
     setTimeout(() =>{
       change_img__forwards.removeAttribute('disabled');
-      change_img__forwards.style.opacity = 1;
       change_img__backwards.removeAttribute('disabled');
       console.log('button work');
       }, 10000);
@@ -126,7 +124,6 @@ change_img__backwards.onclick = () =>{
   fadeFigure.style.filter = "blur(5rem)";
   image__discription.innerHTML = "";
   change_img__forwards.setAttribute('disabled', 'true');
-  change_img__forwards.style.opacity = .5;
   change_img__backwards.setAttribute('disabled', 'true');
   console.log('button no work');
   setTimeout(function () {
@@ -153,7 +150,6 @@ change_img__backwards.onclick = () =>{
     },3000);
   setTimeout(() =>{
     change_img__forwards.removeAttribute('disabled');
-    change_img__forwards.style.opacity = 1;
     change_img__backwards.removeAttribute('disabled');
     console.log('button work');
   }, 9000);
@@ -257,7 +253,7 @@ for (let n = 0; n < target.length; n++) {
           }
         break;
       case target[6]:
-          info__box.innerHTML = "<h1>2</h1><p>6</p><button type='button' name='button' id='js--closeInfoButton'>close</button>"
+          info__box.innerHTML = "<h1>De Syrische Burgeroorlog</h1><p>Naast ISIS zitten de koerden ook nog eens in een oorlog die al sinds 2011 bezig is. Deze oorlog is tegen het leger van Syrische president al-Assad. Het begon met protesten tegen deze president die uiteindelijk uitliepen tot het geweldadig neer slaan hiervan.<br><br>Tijdens deze oorlog heeft de gewapende tak van Koerdische partij PYD (de YPG) de kans gepakt om een eigen autonoom gebied op te stellen in noord-oost Syrië, Rojava of West-Koerdistan. dat betekend dat deze partij daar de macht heeft en niet de Syrische overheid.<br><br>Vanaf 2015 werd ISIS een partij in deze oorlog met de wens hun eigen heilige staat op te richten, een kalifaat </p><button type='button' name='button' id='js--closeInfoButton'>close</button>"
           document.getElementById('js--closeInfoButton').onclick = () =>{
             closeInfo();
           }
