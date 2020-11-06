@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <!-- TODO: info in info blokken, achtergronden -->
+    <!-- TODO: info in info blokken -->
     <meta charset="utf-8">
     <link rel="stylesheet" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Ipmedt2_2020</title>
   </head>
   <body>
@@ -12,14 +13,14 @@
       <audio id="js--walkingSound" src="sounds/walking.wav"></audio>
       <audio id="js--wind" src="sounds/wind.wav" preload="auto"></audio>
       <audio id="js--campfireSound" src="sounds/campfireSound.wav"></audio>
-      <p class="targetCounter" id="js--targetCounter">Targets: 0/6</p>
+      <p class="targetCounter" id="js--targetCounter">Targets: 0/7</p>
       <div class="container" id="js--navPage">
-        <button id="js--change_img--backwards" class="button--backwards" type="button" name="button"></button>
+        <button id="js--change_img--backwards" class="button--backwards" type="button" name="button" disabled = 'true'></button>
         <figure id="js--fadeFigure" class="fadeFigure">
           <div class="overlay" id="js--overlay"></div>
           <img id="js--fadeFigure__image" class="fadeFigure__image" src="/img/cityBg.jpg" alt="">
         </figure>
-        <button id="js--change_img--forwards" class="button--forwards" type="button" name="button"></button>
+        <button id="js--change_img--forwards" class="button--forwards" type="button" name="button" disabled = 'true'></button>
         <section class="nav__bubbles">
           <div class="nav__bubbles__dot firstDot"></div>
           <div class="nav__bubbles__dot"></div>
@@ -36,14 +37,7 @@
         </figure>
         <img src="img/terrorist_ak.png" class="targetOne target"></img>
         <img src="img/terrorist_ak2.png" class="targetTwo target"></img>
-        <section class="info">
-          <div class="info__background"></div>
-          <div class="info__box">
-            <h1>Test</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <button type="button" name="button" class="closeInfoButton">close</button>
-          </div>
-        </section>
+        <img src="img/terrorist_ak3.png" class="targetKobani target"></img>
         <div class="scope" id="js--scope"></div>
         <button class="backButton" type="button" name="button"></button>
       </div>
@@ -51,26 +45,29 @@
         <figure class="locatieBackground">
           <img src="/img/suburbs.jpg" alt="">
         </figure>
+        <img src="img/terrorist_ak.png" class="targetTree target"></img>
+        <img src="img/terrorist_sniper.png" class="targetFour target"></img>
         <div class="child" id="js--child"></div>
         <div class="scope"></div>
         <button class="backButton" type="button" name="button"></button>
       </div>
       <div class="outskirtsPage locatie" id="js--towerPage">
         <figure class="locatieBackground">
-          <img src="/img/" alt="">
+          <img src="/img/farm.jpg" alt="">
         </figure>
-        <div class="towerTargetOne target"></div>
+        <img src="img/terrorist_ak2.png" class="targetFive target"></img>
+        <img src="img/terrorist_ak3.png" class="targetSix target"></img>
         <div class="scope"></div>
-        <section class="info">
-          <div class="info__background"></div>
-          <div class="info__box">
-            <h1>Test</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <button type="button" name="button" class="closeInfoButton">close</button>
-          </div>
-        </section>
         <button class="backButton" type="button" name="button"></button>
       </div>
+      <section class="info">
+        <div class="info__background"></div>
+        <div class="info__box" id="js--info__box">
+          <h1>Test</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <button type="button" name="button" class="closeInfoButton">close</button>
+        </div>
+      </section>
       <div class="endPage" id="js--endPage">
         <section class="endPage__tekst">
           <h1>Dit was mijn verhaal</h1>

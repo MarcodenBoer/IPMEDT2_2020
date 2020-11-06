@@ -24,6 +24,7 @@ const wind = document.getElementById('js--wind');
 const endPage = document.getElementById('js--endPage');
 const campfireSound = document.getElementById('js--campfireSound');
 const child = document.getElementById('js--child');
+const info__box = document.getElementById('js--info__box');
 
 image__discription.innerHTML = "";
 const dotColor__active = "#eee";
@@ -32,10 +33,9 @@ const dotColor__notActive = "#3c3c3c";
 let tCount = 0;
 
 const list = ["./img/cityBg.jpg", "./img/streetView.jpg", "./img/suburbsBg.jpg"];
-const description_list = ["het centrum van Kobani, Hier is het meest gevochten tussen IS en het Koerdische verzet", "Deze straat en stukje buiten het centrum is laatst nog door IS gebombardeerd", "Een buitenwijk zo ver van het centrum en toch zo hard getroffen door IS"]
+const description_list = ["Het centrum van Kobani. Hier is het meest gevochten tussen IS en het Koerdische verzet", "Deze straat een stukje buiten het centrum is laatst nog door IS gebombardeerd", "Een buitenwijk zo ver van het centrum en toch zo hard getroffen door IS"];
 const locatie = ["het centrum", "de buitenwijk", "de buitenwijk"];
 const locatiePage = [woodsPage, fisch, towerPage];
-const targetInfo = ["1", "2", "3"]
 let i = 0;
 let x = 0;
 
@@ -43,7 +43,6 @@ wind.loop = true;
 wind.play();
 
 const walkingSoundPlay = () =>{
-  // TODO: zet wind play op start knop van kevin
   walkingSound.play();
   setTimeout(() => {walkingSound.pause(); walkingSound.currentTime = 0;}, 6000);
 }
@@ -70,12 +69,23 @@ const restoreUi = () =>{
   fadeFigure__image.style.transform = 'scale(1)';
 }
 
+const setButtonsActive = () =>{
+  setTimeout(() =>{
+    change_img__forwards.removeAttribute('disabled');
+    change_img__backwards.removeAttribute('disabled');
+    change_img__forwards.style.opacity = 1;
+  }, 9000);
+}
+
+setButtonsActive();
+
 change_img__forwards.onclick = () =>{
   walkingSoundPlay();
   fadeFigure.style.filter = "blur(5rem)";
   image__discription.innerHTML = "";
-  change_img__forwards.disabled = true;
-  change_img__backwards.disabled = true;
+  change_img__forwards.setAttribute('disabled', 'true');
+  change_img__forwards.style.opacity = .5;
+  change_img__backwards.setAttribute('disabled', 'true');
   setTimeout(function () {
     if (i == list.length - 1) {
       bubbles[i].style.backgroundColor = dotColor__active;
@@ -97,17 +107,23 @@ change_img__forwards.onclick = () =>{
       image__discription__button.innerHTML = "Naar " + locatie[i];
     }
       fadeFigure.style.filter = "blur(0)";
-      change_img__forwards.disabled = false;
-      change_img__backwards.disabled = false;
     },3000);
+    setTimeout(() =>{
+      change_img__forwards.removeAttribute('disabled');
+      change_img__forwards.style.opacity = 1;
+      change_img__backwards.removeAttribute('disabled');
+      console.log('button work');
+      }, 10000);
   }
 
 change_img__backwards.onclick = () =>{
   walkingSoundPlay();
   fadeFigure.style.filter = "blur(5rem)";
   image__discription.innerHTML = "";
-  change_img__forwards.disabled = true;
-  change_img__backwards.disabled = true;
+  change_img__forwards.setAttribute('disabled', 'true');
+  change_img__forwards.style.opacity = .5;
+  change_img__backwards.setAttribute('disabled', 'true');
+  console.log('button no work');
   setTimeout(function () {
     if (i == 0) {
       bubbles[i].style.backgroundColor = dotColor__active;
@@ -129,9 +145,13 @@ change_img__backwards.onclick = () =>{
       image__discription__button.innerHTML = "Naar " + locatie[i];
     }
       fadeFigure.style.filter = "blur(0)";
-      change_img__forwards.disabled = false;
-      change_img__backwards.disabled = false;
     },3000);
+  setTimeout(() =>{
+    change_img__forwards.removeAttribute('disabled');
+    change_img__forwards.style.opacity = 1;
+    change_img__backwards.removeAttribute('disabled');
+    console.log('button work');
+  }, 9000);
   }
 
   typeText = (textToBeTyped) =>{
@@ -188,8 +208,57 @@ for (let n = 0; n < target.length; n++) {
     setTimeout(() =>{
     if (target[n].classList.contains('targetShot') == false) {
       tCount++;
-      targetCounter.innerHTML = "Targets: " + tCount + "/6";
+      targetCounter.innerHTML = "Targets: " + tCount + "/7";
     };
+    switch (target[n]) {
+      case target[0]:
+          info__box.innerHTML = "<h1>De Koerden</h1><p>Wie zijn de koerden nou eigenlijk? De koerden zijn een bevolkingsgroep die vooral in het midden-oosten. Een eigen land, dus ze wonen in landen zoals Turkije, Iran, Irak en Syrië. Het grootste gedeelte van de koerden is Moslim, zo'n 90%! daarnaast zijn de overige 10% verdeelt onder Christenen en Joden. De Syrische Koerden liggen zwaar onder vuur door IS omdat ze vooral in het noorden van Syrië wonen, de plek waar IS Syrië is binnen gevallen. Ondanks de onderdrukking blijven ze wel terug vechten want de koerden zijn een trots en volhardend volk</p><button type='button' name='button' id='js--closeInfoButton'>close</button>"
+          document.getElementById('js--closeInfoButton').onclick = () =>{
+            closeInfo();
+          }
+        break;
+      case target[1]:
+          info__box.innerHTML = "<h1>Terreurgroep ISIS</h1><p>Wie kent ISIS ondertussen nog niet? Hier in het westen zijn ze vaak genoeg op het nieuws geweest maar wie zijn het nou eigenlijk en wat willen ze? Het ISIS zoals wij het kennen bestaat sinds 2013 en in hun woorden willen ze: zich verzetten tegen de Amerikanen in Irak en het oprichten van hun eigen heilige staat. Dit doen ze alleen wel met veel geweld en terroristische aanslagen. Zo geven ze iedereen in hun overgenomen gebied de keuzen om naar hun geloof te bekeren of om dood te worden gemaakt</p><button type='button' name='button' id='js--closeInfoButton'>close</button>"
+          document.getElementById('js--closeInfoButton').onclick = () =>{
+            closeInfo();
+          }
+        break;
+      case target[2]:
+          info__box.innerHTML = "<h1>Kobani</h1><p>De woonplaats van Haron zelf, Kobani of 'Ayn al-'Arab . Een stad in het noord-oosten van Syrië op de grens met Turkijë. De stad was van september 2014 tot maart 2015 het toneel van gevechten tussen Koerdische strijdkrachten en terreurgroep IS, tijdens de Syrische Burgeroorlog. Dit leidde tot een grote stroom vluchtelingen aan de grens met Turkije. Door het vele vechten in en rondom de stad is het sinds 2012 onder controle van de Koerdische Volksbeschermingseenheden(YPG)</p><img id = 'js--kobaniOnMap' src = '/img/kobaniMaps.jpg' height = '80%' width = '80%'></img><button type='button' name='button' id='js--closeInfoButton'>close</button>"
+          document.getElementById('js--kobaniOnMap').style.padding = '1rem';
+            document.getElementById('js--closeInfoButton').onclick = () =>{
+            closeInfo();
+          }
+        break;
+      case target[3]:
+          info__box.innerHTML = "<h1>Bom aanslagen</h1><p id = 'js--warning'><b>! Kijk uit, schokende beelden !</b></p> <video id = 'js--video' width = '90%' height = '50%' controls><source src = '/vid/bomAanslag.mp4' type='video/mp4'></video><p>In dit video fragment worden meerdere bom aanslagen door IS laten zien. Dit is een van de manieren waarop IS oorlog voerd. zelfs als ze moeten terugtrekken weten ze nog wel tereur te zaaien in de gebieden die veilig horen te zijn</p><button type='button' name='button' id='js--closeInfoButton'>close</button>"
+          document.getElementById('js--warning').style.textAlign = 'center';
+          document.getElementById('js--video').style.padding = '1rem';
+          document.getElementById('js--closeInfoButton').onclick = () =>{
+            closeInfo();
+          }
+        break;
+      case target[4]:
+          info__box.innerHTML = "<h1>Sniper vaardigheden</h1><p>Welke skills heb je nou precies nodig om een effectieve scherpschutter te zijn?<br>Geduld: Als sniper moet je ontzettend lang op de zelfde plek kunnen blijven wachten, wachtend op je doelwit. dit kan soms wel uren tot dagen duren!</p><img width = '40%' height = '60%'  src = '/img/snipersNest.jpg'></img><p>Soms ook in kleine ruimtes zoals deze.<br><br>Een vaste hand: Je bent een scherpschutter dus je doelwitten zijn meestal op verre afstanden te vinden. Hiervoor moet je je geweer goed stil kunnen houden want op zulke afstanden kan elke bewegen leiden tot het missen van je target.<br><br> Wiskunde: Jaja, zelfs als scherpschutter heb je een goede hoop wiskunde nodig. Zo moet je de afstand naar je doelwit kunnen inschatten om het vallen van je kogel tegen te gaan. en moet je de snelheid van je doelwit ook meerekenen anders schiet je voor of achter je target</p><button type='button' name='button' id='js--closeInfoButton'>close</button>"
+          document.getElementById('js--closeInfoButton').onclick = () =>{
+            closeInfo();
+          }
+        break;
+      case target[5]:
+          info__box.innerHTML = "<h1>Sniper apparatuur</h1><p>In Kobani heb je als sniper niet zo veel tot je beschiking als bijvoorbeeld het amerikaanse leger. Hier moet je het doen met een simpele sniper, een veldfles en spullen die je zelf kan vinden.<br><br> Wil je jezelf een comfortabele plek geven om in te wachten? dan zoek je wat dekens en kussens op in verlaten huizen. Wil je weten waar een vijandelijke sniper zit? kijk goed of je de glans van zijn vizier kan zien.</p><button type='button' name='button' id='js--closeInfoButton'>close</button>"
+          document.getElementById('js--closeInfoButton').onclick = () =>{
+            closeInfo();
+          }
+        break;
+      case target[6]:
+          info__box.innerHTML = "<h1>2</h1><p>6</p><button type='button' name='button' id='js--closeInfoButton'>close</button>"
+          document.getElementById('js--closeInfoButton').onclick = () =>{
+            closeInfo();
+          }
+        break;
+      default:
+      info__box.innerHTML = "peepee poopoo"
+    }
     target[n].classList.add('targetShot');
     for (let i = 0; i < info.length; i++) {
       info[i].style.display = "flex";
@@ -215,7 +284,7 @@ const closeInfo = () =>{
   for (let i = 0; i < info.length; i++) {
     info[i].style.opacity = '0';
     setTimeout(() =>{
-      if (tCount == 6) {
+      if (tCount == 7) {
         locatiePage[x].style.display = 'none';
         endPage.style.display = 'flex';
         targetCounter.style.display = 'none';
