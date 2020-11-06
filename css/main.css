@@ -5,11 +5,11 @@
 }
 
 :root{
-  --funny-bg-color: #696969;
   --main-bg-color: #080808;
   --html-text-color: #eee;
   --dot-color-active: #3c3c3c;
   --overlay-color: rgba(0,0,0,50%);
+  --button-color: #ddd;
 }
 
 html{
@@ -73,9 +73,8 @@ main{
   grid-row: 4 / span 1;
   width: 10rem;
 	height: 10rem;
-  background-color: white;
+  background-color: var(--button-color);
 	clip-path: polygon(55% 28%, 100% 50%, 55% 72%, 0% 100%, 25% 50%, 0% 0%);
-  opacity: .5;
   transition: opacity 3s;
 }
 
@@ -85,6 +84,7 @@ main{
   grid-row: 4 / span 1;
   width: 10rem;
 	height: 10rem;
+  background-color: var(--button-color);
   clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 45% 72%, 0% 50%, 45% 28%);
   transition: opacity 3s;
 }
@@ -138,6 +138,7 @@ main{
   transition: .5s;
   border-radius: .5rem;
   border: .2rem solid var(--main-bg-color);
+  background-color: var(--button-color);
   animation-name: pulse;
   animation-duration: 3s;
   animation-iteration-count: infinite;
@@ -159,6 +160,11 @@ main{
 .target{
   position: absolute;
   filter: brightness(1.5);
+  transition: transform .5s
+}
+
+.target:hover{
+  transform: scale(1.1);
 }
 
 .child{
@@ -252,7 +258,7 @@ main{
   border-radius: .5rem;
   background-color: var(--overlay-color);
   z-index: 4;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .info__box > h1{
@@ -276,6 +282,7 @@ main{
   border-radius: .5rem;
   margin: 1.5rem;
   border: .2rem solid var(--main-bg-color);
+  background-color: var(--button-color);
 }
 
 .targetCounter{
@@ -378,7 +385,7 @@ main{
 }
 
 .endPage__tekst > h1{
-  font-size: 5rem;
+  font-size: 4rem;
   grid-column: 1 / span 12;
   grid-row: 1 / span 2;
   padding: 1rem;
@@ -395,7 +402,14 @@ main{
   font-size: 2rem;
   padding: .5rem;
   border-radius: .5rem;
-  border: none;
+  border: .2rem solid var(--main-bg-color);
+  background-color: var(--button-color);
+}
+
+.endPage__tekst > button:hover{
+  background-color: var(--main-bg-color);
+  color: var(--html-text-color);
+  border: .2rem solid var(--html-text-color);
 }
 
 .endPage__tekst > button:nth-of-type(1){
@@ -427,9 +441,135 @@ main{
   }
 }
 
+@media query (min-width: 850px){
+  .overlay::after{
+    left: 40vw;
+    top: 15vh;
+    height: 20.5rem;
+    width: 20.5rem;
+  }
+
+  .image__discription > p{
+    font-size: 2rem;
+  }
+}
+
 
 @media (min-width: 1025px) {
   .scope{
     transition: opacity .5s;
+  }
+
+  .image__discription{
+    grid-column: 3 / span 8;
+  }
+
+  .image__discription > p{
+    font-size: 3.8rem;
+    padding: 2rem;
+  }
+
+  .image__discription > button{
+    font-size: 3rem;
+  }
+
+  .overlay::after{
+    height: 37.5rem;
+    width: 37.5rem;
+    left: 37vw
+  }
+
+  .nav__bubbles{
+    grid-column: 6 / span 4
+  }
+
+  .nav__bubbles__dot{
+    margin: 0 2.25rem
+  }
+
+  .targetOne{
+    left: 31%;
+    top: 23.5%;
+    height: 9rem;
+    width: 9rem;
+  }
+
+  .targetTwo{
+    left: 61%;
+    top: 41%;
+    height: 8rem;
+    width: 8rem;
+  }
+
+  .targetKobani{
+    left: 20%;
+    top: 60%;
+    height: 12rem;
+    width: 12rem;
+  }
+
+  .backButton{
+    top: 73vh;
+    left: 84vw;
+    height: 18vh;
+    width: 18vh;
+  }
+
+  .targetTree{
+    left: 61%;
+    top: 41%
+  }
+
+  .targetFour{
+    left: 19%;
+    top: 1%;
+    height: 14rem;
+    width: 14rem;
+  }
+
+  .child{
+    height: 26rem;
+    width: 12.5rem;
+    top: 45rem;
+  }
+
+  .targetFive{
+    left: 75%;
+    top: 21%;
+    height: 12rem;
+    width: 12rem;
+  }
+
+  .targetSix{
+    left: 18%;
+    top: 9%;
+    height: 12rem;
+    width: 12rem;
+  }
+
+  .info__box{
+    width: 70%;
+    height: 70%;
+  }
+
+  .info__box > button{
+    transition: all .5s;
+  }
+
+  .info__box > button:hover{
+    background-color: var(--main-bg-color);
+    color: var(--html-text-color);
+    border: .2rem solid var(--html-text-color);
+  }
+
+  .endPage__tekst > h1{
+    font-size: 5rem;
+    grid-column: 2 / span 12;
+    padding: 1rem 0;
+  }
+
+  .endPage__tekst > h2{
+    grid-column: 2 / span 12;
+    padding: 1rem 0;
   }
 }

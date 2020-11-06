@@ -38,8 +38,8 @@ const dotColor__notActive = "#3c3c3c";
 let tCount = 0;
 
 const list = ["./img/cityBg.jpg", "./img/streetView.jpg", "./img/suburbsBg.jpg"];
-const description_list = ["Het centrum van Kobani. Hier is het meest gevochten tussen IS en het Koerdische verzet", "Deze straat een stukje buiten het centrum is laatst nog door IS gebombardeerd", "Een buitenwijk zo ver van het centrum en toch zo hard getroffen door IS"];
-const locatie = ["het centrum", "de buitenwijk", "de buitenwijk"];
+const description_list = ["Het centrum van Kobani. Hier is het meest gevochten tussen ISIS en het Koerdische verzet", "Deze straat een stukje buiten het centrum is laatst nog door ISIS gebombardeerd", "Een buitenwijk zo ver van het centrum en toch zo hard getroffen door ISIS"];
+const locatie = ["het centrum", "de straat", "de buitenwijk"];
 const locatiePage = [woodsPage, fisch, towerPage];
 let i = 0;
 let x = 0;
@@ -355,7 +355,7 @@ endpageBackButton.onclick = () =>{
 }
 
 endPageResetButton.onclick = () =>{
-  location.href = ""
+  location.href = "https://sniperkobani.firebaseapp.com/"
 }
 
 document.addEventListener('mousemove', onMouseMove);
