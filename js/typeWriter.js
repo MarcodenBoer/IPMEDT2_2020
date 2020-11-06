@@ -4,7 +4,7 @@ window.onload = (event) => {
   let completed = false;
   const txt = 'Lorem ipsum dummy text blabla. Lorem ipsum dummy text blabla.Lorem ipsum dummy text blabla.Lorem ipsum dummy text blabla.Lorem ipsum dummy text blabla.';
   const comment = 'test hallo ik werk';
-  const speed = 35;
+  let speed = 45;
   const likeButton = document.getElementById('js--like');
   const commentButton = document.getElementById('js--comment');
   const textarea = document.getElementById('js--textarea');
@@ -32,6 +32,10 @@ window.onload = (event) => {
 
   typeText();
 
+  function redirect(){
+    window.location.href = "mainPage.html";
+  }
+
   function typeText(){
     if (i < txt.length) {
       document.getElementById("js--typeThis").innerHTML += txt.charAt(i);
@@ -51,7 +55,20 @@ window.onload = (event) => {
       setTimeout(typeTextarea, speed);
     }
     else{
-      window.location.href = "mainPage.html";
+      console.log('redirect');
+      setTimeout(redirect, 2500);
+    }
+  }
+
+  document.body.onkeydown = function(e){
+    if(e.keyCode == 32){
+        speed = 15;
+    }
+  }
+
+  document.body.onkeyup = function(e){
+    if(e.keyCode == 32){
+        speed = 45;
     }
   }
 
