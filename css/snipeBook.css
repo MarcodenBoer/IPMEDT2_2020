@@ -80,27 +80,6 @@ h1{
   font-size: 175%;
 }
 
-.post__card__button{
-  display: none;
-  margin: 0 auto;
-  padding: 1rem;
-  font-family: 'Roboto', sans-serif;
-  font-size: 175%;
-  border-radius: 1rem;
-  background-color: #EDC9AF;
-  transition: 0.5s;
-}
-
-.post__card__button:hover{
-  background-color: #bf7947;
-  cursor: pointer;
-}
-
-.post__card__button:active{
-  background-color: #734626;
-  color: #eeeeee;
-}
-
 .text--big{
   font-size: 200%;
   font-weight: 600;
@@ -110,6 +89,73 @@ h1{
   font-size: 150%;
   color: grey;
   margin-top: 0.5rem;
+}
+
+.post__card__likeComment{
+  display: flex;
+  flex-direction: row;
+  fle
+  margin-top: 2rem;
+}
+
+.post__card__likeComment__button{
+  margin: 0.5rem;
+  width: 50%;
+  padding: 1rem;
+  border: 3px solid #dddddd;
+  background: white;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 150%;
+  transition: 0.2s;
+}
+
+.post__card__likeComment__button:hover{
+  background-color: #dddddd;
+  border: 3px solid white;
+  cursor: pointer;
+}
+
+.post__card__likeComment__button:active{
+  background-color: #cccccc;
+  border: 3px solid white;
+}
+
+.button--liked{
+  background-color: #95baf5;
+  color: white;
+}
+
+.button--liked:hover{
+  background-color: #557ab5;
+}
+
+.button--noclick{
+  color: #dddddd;
+}
+
+.button--noclick:hover{
+  cursor: no-drop;
+  border: 3px solid #dddddd;
+  background: white;
+}
+
+.post__card__input{
+  border: 3px solid #dddddd;
+  border-radius: 5px;
+  margin: 0.5rem;
+  width: 48%;
+  height: 11rem;
+  float: right;
+  font-family: 'Roboto', sans-serif;
+  padding: 0.8rem;
+  resize: none;
+  display: none;
+}
+
+.input--show{
+  display: block;
 }
 
 @media (min-width: 800px) {
