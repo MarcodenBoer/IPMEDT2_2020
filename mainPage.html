@@ -16,50 +16,50 @@
       <audio id="js--breath" src="sounds/breath.mp3"></audio>
       <p class="targetCounter" id="js--targetCounter">Targets: 0/7</p>
       <div class="container" id="js--navPage">
-        <button id="js--change_img--backwards" class="button--backwards" type="button" name="button" disabled = 'true'></button>
-        <figure id="js--fadeFigure" class="fadeFigure">
-          <div class="overlay" id="js--overlay"></div>
-          <img id="js--fadeFigure__image" class="fadeFigure__image" src="./img/cityBg.jpg" alt="">
+        <button id="js--change_img--backwards" class="container__button--backwards" type="button" name="button" disabled = 'true'></button>
+        <figure id="js--fadeFigure" class="container__fadeFigure">
+          <div class="container__overlay" id="js--overlay"></div>
+          <img id="js--fadeFigure__image" class="container__fadeFigure__image" src="./img/cityBg.jpg" alt="">
         </figure>
-        <button id="js--change_img--forwards" class="button--forwards" type="button" name="button" disabled = 'true'></button>
-        <section class="nav__bubbles">
-          <div class="nav__bubbles__dot firstDot"></div>
-          <div class="nav__bubbles__dot"></div>
-          <div class="nav__bubbles__dot"></div>
+        <button id="js--change_img--forwards" class="container__button--forwards" type="button" name="button" disabled = 'true'></button>
+        <section class="container__nav__bubbles">
+          <div class="container__nav__bubbles__dot firstDot"></div>
+          <div class="container__nav__bubbles__dot"></div>
+          <div class="container__nav__bubbles__dot"></div>
         </section>
-        <section class="image__discription" id="js--image__discription_box">
+        <section class="container__image__discription" id="js--image__discription_box">
           <p id="js--image__discription"></p>
           <button id="js--image__discription__button" type="button" name="button">Naar het centrum</button>
         </section>
       </div>
       <div class="centrePage locatie" id="js--woodsPage">
-        <figure class="locatieBackground">
+        <figure class="locatie__Background">
           <img srcset = "img/ruinedCity_640.jpg 640w, img/ruinedCity_1280.jpg 1280w, img/ruinedCity_1920.jpg 1920w" sizes = "(min-width: 1500px) 1920px, (min-width: 1000px) 1280px, 640px" src="/img/ruinedCity_640.jpg" alt="">
         </figure>
-        <img src="img/terrorist_ak.png" class="targetOne target"></img>
-        <img src="img/terrorist_ak2.png" class="targetTwo target"></img>
-        <img src="img/terrorist_ak3.png" class="targetKobani target"></img>
-        <div class="scope" id="js--scope"></div>
-        <button class="backButton" type="button" name="button"></button>
+        <img src="img/terrorist_ak.png" class="targetOne locatie__target"></img>
+        <img src="img/terrorist_ak2.png" class="targetTwo locatie__target"></img>
+        <img src="img/terrorist_ak3.png" class="targetKobani locatie__target"></img>
+        <div class="locatie__scope" id="js--scope"></div>
+        <button class="locatie__backButton" type="button" name="button"></button>
       </div>
       <div class="suburbsPage locatie" id="js--fisch">
-        <figure class="locatieBackground">
+        <figure class="locatie__Background">
           <img src="./img/suburbs.jpg" alt="">
         </figure>
-        <img src="img/terrorist_ak.png" class="targetTree target"></img>
-        <img src="img/terrorist_sniper.png" class="targetFour target"></img>
-        <div class="child" id="js--child"></div>
-        <div class="scope"></div>
-        <button class="backButton" type="button" name="button"></button>
+        <img src="img/terrorist_ak.png" class="targetTree locatie__target"></img>
+        <img src="img/terrorist_sniper.png" class="targetFour locatie__target"></img>
+        <div class="locatie__child" id="js--child"></div>
+        <div class="locatie__scope"></div>
+        <button class="locatie__backButton" type="button" name="button"></button>
       </div>
       <div class="outskirtsPage locatie" id="js--towerPage">
-        <figure class="locatieBackground">
+        <figure class="locatie__Background">
           <img src="./img/farm.jpg" alt="">
         </figure>
-        <img src="img/terrorist_ak2.png" class="targetFive target"></img>
-        <img src="img/terrorist_ak3.png" class="targetSix target"></img>
-        <div class="scope"></div>
-        <button class="backButton" type="button" name="button"></button>
+        <img src="img/terrorist_ak2.png" class="targetFive locatie__target"></img>
+        <img src="img/terrorist_ak3.png" class="targetSix locatie__target"></img>
+        <div class="locatie__scope"></div>
+        <button class="locatie__backButton" type="button" name="button"></button>
       </div>
       <section class="info">
         <div class="info__background"></div>
@@ -69,10 +69,10 @@
         <section class="endPage__tekst">
           <h1>Bedankt voor het helpen in dit avontuur</h1>
           <h2>Wil je meer weten over Haron en zijn strijd tegen IS bekijk dan deze links</h2>
-          <button id="js--endPageDocuButton" class="endPageButton" type="button" name="button">De documantaire die de bron is voor deze site</button>
-          <button id="js--endPageInteviewButton" class="endPageButton" type="button" name="button">Een interview met de maker van de documantaire</button>
-          <button id="js--endpageBackButton" class="endPageButton" type="button" name="button">Terug gaan om alles nog eens door te lezen</button>
-          <button id="js--endPageResetButton" class="endPageButton" type="button" name="button">De site vanaf het begin af spelen</button>
+          <button id="js--endPageDocuButton" class="endPage__tekst__Button" type="button" name="button">De documantaire die de bron is voor deze site</button>
+          <button id="js--endPageInteviewButton" class="endPage__tekst__Button" type="button" name="button">Een interview met de maker van de documantaire</button>
+          <button id="js--endpageBackButton" class="endPage__tekst__Button" type="button" name="button">Terug gaan om alles nog eens door te lezen</button>
+          <button id="js--endPageResetButton" class="endPage__tekst__Button" type="button" name="button">De site resseten en vanaf het begin af spelen</button>
         </section>
       </div>
     </main>

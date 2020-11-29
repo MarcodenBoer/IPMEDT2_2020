@@ -26,148 +26,73 @@ main{
 }
 
 .container{
-  display: grid;
-  grid-template-columns: repeat(12,minmax(0,1fr));
-  grid-template-rows: repeat(12, minmax(0,1fr));
+  display: block;
   width: 85%;
   height: 90vh;
   z-index: 2;
   transition: opacity 3s;
 }
 
-.fadeFigure{
-  height: 100vh;
-  width: 100vw;
-  transition: 3s;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  overflow: hidden;
+.container__image__discription{
+  margin: 0 auto;
+  width: 75%;
+  height: 35%;
+  margin-top: 55vh;
 }
 
-.overlay{
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  z-index: 1;
-  overflow: hidden;
-  transition: opacity 3s;
+.container__image__discription > p{
+  font-size: 2.8rem;
+  padding: 1.5rem;
 }
 
-.overlay::after{
-  content: "";
-  position: absolute;
-  left: 36vw;
-  top: 12vh;
-  height: 27.5rem;
-  width: 27.5rem;
-  border-radius: 100%;
-  box-shadow: 0px 0px 0px 2000px var(--overlay-color);
-}
-
-.button--forwards{
+.container__button--backwards{
   position: relative;
-  right: 3rem;
-  grid-column: 11 / span 2;
-  grid-row: 4 / span 1;
   width: 10rem;
-	height: 10rem;
-  background-color: var(--button-color);
-	clip-path: polygon(55% 28%, 100% 50%, 55% 72%, 0% 100%, 25% 50%, 0% 0%);
-  transition: opacity 3s;
-}
-
-.button--backwards{
-  position: relative;
-  grid-column: 2 / span 2;
-  grid-row: 4 / span 1;
-  width: 10rem;
-	height: 10rem;
+  height: 10rem;
   background-color: var(--button-color);
   clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 45% 72%, 0% 50%, 45% 28%);
-  transition: opacity 3s;
+  transition: opacity 3s, transform .5s;
+  top: 23vh;
+  left: 13%;
 }
 
-.fadeFigure__image{
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  transition: transform 3s;
-}
-
-.nav__bubbles{
-  grid-column: 6 / span 3;
-  grid-row: 1 / span 1;
-}
-
-.nav__bubbles__dot{
-  height: 2rem;
-  width: 2rem;
-  border-radius: 50%;
-  display: inline-block;
-  background-color: var(--html-text-color);
-  margin: 0 1.25rem;
-  transition: opacity 3s;
-}
-
-.firstDot{background-color: var(--dot-color-active)}
-
-.image__discription{
-  grid-column: 2 / span 10;
-  grid-row: 9 / span 4;
-  background-color: var(--overlay-color);
-  border: .2rem solid var(--html-text-color);
-  outline: .2rem solid var(--html-text-color);
-  outline-offset: .4rem;
-  text-align: center;
-  border-radius: .5rem;
-  transition: opacity 3s;
-}
-
-.image__discription > p{
-  font-size: 3rem;
-  width: 100%;
-  padding: 1rem
-}
-
-.image__discription > button{
-  width: 60%;
-  font-size: 2rem;
-  padding: 1.5rem;
-  transition: .5s;
-  border-radius: .5rem;
-  border: .2rem solid var(--main-bg-color);
+.container__button--forwards{
+  position: relative;
+  width: 10rem;
+  height: 10rem;
   background-color: var(--button-color);
-  animation-name: pulse;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
+  clip-path: polygon(55% 28%, 100% 50%, 55% 72%, 0% 100%, 25% 50%, 0% 0%);
+  transition: opacity 3s, transform .5s;
+  top: 23vh;
+  left: 63%;
 }
 
-.image__discription > button:hover{
-  background-color: var(--main-bg-color);
-  color: var(--html-text-color);
-  border: .2rem solid var(--html-text-color);
+.container__button--forwards:hover{
+  transform: scale(1.1);
 }
 
-.image__discription > button:active{
-  transform: translateY(.5rem);
-  transition: none;
+.container__button--backwards:hover{
+  transform: scale(1.1);
 }
 
-.target{
+.container__nav__bubbles{
+  margin: -18vh auto 0 auto;
+  width: 17%;
+}
+
+.firstDot{background-color: var(--dot-color-active); transition: opacity 3s;}
+
+.locatie__target{
   position: absolute;
   filter: brightness(1.5);
   transition: transform .5s
 }
 
-.target:hover{
+.locatie__target:hover{
   transform: scale(1.1);
 }
 
-.child{
+.locatie__child{
   height: 20rem;
   width: 7.5rem;
   position: absolute;
@@ -175,7 +100,7 @@ main{
   left: 26%;
 }
 
-.targetShot{
+.locatie__targetShot{
   filter: grayscale(1);
 }
 
@@ -294,7 +219,7 @@ main{
   z-index: 3;
 }
 
-.backButton{
+.locatie__backButton{
   position: absolute;
   top: 80vh;
   left: 86vw;
@@ -308,17 +233,17 @@ main{
   background-position: center;
 }
 
-.backButton:hover{
+.locatie__backButton:hover{
   cursor: none;
 }
 
-.locatieBackground{
+.locatie__Background{
   height: 100vh;
   width: 100vw;
   overflow: hidden;
 }
 
-.locatieBackground > img{
+.locatie__Background > img{
   width: 100%;
   height: 100%;
 }
@@ -335,7 +260,7 @@ main{
   display: none;
 }
 
-.scope{
+.locatie__scope{
   opacity: 0;
   position: absolute;
   border-radius: 50%;
@@ -352,7 +277,7 @@ main{
   transition: all .5s;
 }
 
-.scope::after{
+.locatie__scope::after{
   content: "";
   position: absolute;
   top: calc(-27.5rem/3);
@@ -379,57 +304,33 @@ main{
   width: 85%;
   height: 70%;
   background-color: var(--overlay-color);
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0,1fr));
-  grid-template-rows: repeat(12, minmax(0,1fr));
 }
 
 .endPage__tekst > h1{
   font-size: 4rem;
-  grid-column: 1 / span 12;
-  grid-row: 1 / span 2;
   padding: 1rem;
 }
 
 .endPage__tekst > h2{
   font-size: 2.5rem;
-  grid-column: 1 /span 12;
-  grid-row: 3 / span 2;
   padding: 1rem;
 }
 
-.endPage__tekst > button{
+.endPage__tekst__Button{
   font-size: 2rem;
   padding: .5rem;
   border-radius: .5rem;
   border: .2rem solid var(--main-bg-color);
   background-color: var(--button-color);
+  margin: 4rem 8rem;
+  height: 15%;
+  width: 30%;
 }
 
-.endPage__tekst > button:hover{
+.endPage__tekst__Button:hover{
   background-color: var(--main-bg-color);
   color: var(--html-text-color);
   border: .2rem solid var(--html-text-color);
-}
-
-.endPage__tekst > button:nth-of-type(1){
-  grid-column: 2 /span 4;
-  grid-row: 6 / span 2;
-}
-
-.endPage__tekst > button:nth-of-type(2){
-  grid-column: 8 /span 4;
-  grid-row: 6 / span 2;
-}
-
-.endPage__tekst > button:nth-of-type(3){
-  grid-column: 2 /span 4;
-  grid-row: 10 / span 2;
-}
-
-.endPage__tekst > button:nth-of-type(4){
-  grid-column: 8 /span 4;
-  grid-row: 10 / span 2;
 }
 
 @keyframes pulse {
@@ -493,49 +394,56 @@ main{
 
 
 @media query (min-width: 850px){
-  .overlay::after{
+  .container__overlay::after{
     left: 40vw;
     top: 15vh;
     height: 20.5rem;
     width: 20.5rem;
   }
 
-  .image__discription > p{
+  .container__image__discription > p{
     font-size: 2rem;
   }
 }
 
 
 @media (min-width: 1025px) {
-  .scope{
+  .locatie__scope{
     transition: opacity .5s;
   }
 
-  .image__discription{
-    grid-column: 3 / span 8;
-  }
-
-  .image__discription > p{
+  .container__image__discription > p{
     font-size: 3.8rem;
     padding: 2rem;
   }
 
-  .image__discription > button{
+  .container__image__discription > button{
     font-size: 3rem;
   }
 
-  .overlay::after{
+  .container__overlay::after{
     height: 37.5rem;
     width: 37.5rem;
-    left: 37vw
+    left: 38vw
   }
 
-  .nav__bubbles{
-    grid-column: 6 / span 4
+  .container__nav__bubbles{
+    width: 16%;
+    margin: -12vh auto 0 auto;
   }
 
-  .nav__bubbles__dot{
+  .container__nav__bubbles__dot{
     margin: 0 2.25rem
+  }
+
+  .container__button--forwards{
+    top: 25vh;
+    left: 65%;
+  }
+
+  .container__button--backwards{
+    top: 25vh;
+    left: 20%;
   }
 
   .targetOne{
@@ -559,7 +467,7 @@ main{
     width: 12rem;
   }
 
-  .backButton{
+  .locatie__backButton{
     top: 73vh;
     left: 84vw;
     height: 18vh;
@@ -578,7 +486,7 @@ main{
     width: 14rem;
   }
 
-  .child{
+  .locatie__child{
     height: 26rem;
     width: 12.5rem;
     top: 45rem;
@@ -615,12 +523,223 @@ main{
 
   .endPage__tekst > h1{
     font-size: 5rem;
-    grid-column: 2 / span 12;
-    padding: 1rem 0;
+    padding: 1rem 12rem;
   }
 
   .endPage__tekst > h2{
-    grid-column: 2 / span 12;
-    padding: 1rem 0;
+    padding: 1rem 12rem;
+  }
+
+  .endPage__tekst__Button{
+    width: 30%;
+    height: 15%;
+    margin: 5rem 12rem;
+  }
+}
+
+@supports (display: grid) {
+  .container{
+    display: grid;
+    grid-template-columns: repeat(12,minmax(0,1fr));
+    grid-template-rows: repeat(12, minmax(0,1fr));
+  }
+
+  .container__fadeFigure{
+    height: 100vh;
+    width: 100vw;
+    transition: 3s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  .container__overlay{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    overflow: hidden;
+    transition: opacity 3s;
+  }
+
+  .container__overlay::after{
+    content: "";
+    position: absolute;
+    left: 36vw;
+    top: 12vh;
+    height: 27.5rem;
+    width: 27.5rem;
+    border-radius: 100%;
+    box-shadow: 0px 0px 0px 2000px var(--overlay-color);
+  }
+
+  .container__button--forwards{
+    grid-column: 10 / span 2;
+    grid-row: 4 / span 1;
+    top: 0;
+    left: -15%;
+  }
+
+  .container__button--backwards{
+    grid-column: 3 / span 2;
+    grid-row: 4 / span 1;
+    top: 0;
+    left: 0;
+  }
+
+  .container__fadeFigure__image{
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    transition: transform 3s;
+  }
+
+  .container__nav__bubbles{
+    grid-column: 6 / span 3;
+    grid-row: 1 / span 1;
+    margin: 0;
+    width: 100%;
+  }
+
+  .container__nav__bubbles__dot{
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: var(--html-text-color);
+    margin: 0 1.25rem;
+    transition: opacity 3s;
+  }
+
+  .firstDot{background-color: var(--dot-color-active); transition: opacity 3s;}
+
+  .container__image__discription{
+    grid-column: 2 / span 10;
+    grid-row: 9 / span 4;
+    background-color: var(--overlay-color);
+    border: .2rem solid var(--html-text-color);
+    outline: .2rem solid var(--html-text-color);
+    outline-offset: .4rem;
+    text-align: center;
+    border-radius: .5rem;
+    transition: opacity 3s;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+
+  .container__image__discription > p{
+    font-size: 3rem;
+    width: 100%;
+    padding: 1rem
+  }
+
+  .container__image__discription > button{
+    width: 60%;
+    font-size: 2rem;
+    padding: 1.5rem;
+    transition: .5s;
+    border-radius: .5rem;
+    border: .2rem solid var(--main-bg-color);
+    background-color: var(--button-color);
+    animation-name: pulse;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+  }
+
+  .container__image__discription > button:hover{
+    background-color: var(--main-bg-color);
+    color: var(--html-text-color);
+    border: .2rem solid var(--html-text-color);
+  }
+
+  .container__image__discription > button:active{
+    transform: translateY(.5rem);
+    transition: none;
+  }
+
+  .endPage__tekst{
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0,1fr));
+    grid-template-rows: repeat(12, minmax(0,1fr));
+  }
+
+  .endPage__tekst > h1{
+    grid-column: 1 / span 12;
+    grid-row: 1 / span 2;
+  }
+
+  .endPage__tekst > h2{
+    grid-column: 1 /span 12;
+    grid-row: 3 / span 2;
+  }
+
+  .endPage__tekst__Button{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .endPage__tekst__Button:nth-of-type(1){
+    grid-column: 2 /span 4;
+    grid-row: 6 / span 2;
+  }
+
+  .endPage__tekst__Button:nth-of-type(2){
+    grid-column: 8 /span 4;
+    grid-row: 6 / span 2;
+  }
+
+  .endPage__tekst__Button:nth-of-type(3){
+    grid-column: 2 /span 4;
+    grid-row: 10 / span 2;
+  }
+
+  .endPage__tekst__Button:nth-of-type(4){
+    grid-column: 8 /span 4;
+    grid-row: 10 / span 2;
+  }
+
+  @media (min-width: 1025px) {
+    .container__image__discription{
+      grid-column: 3 / span 8;
+    }
+
+    .container__image__discription > p{
+      font-size: 3.8rem;
+      padding: 2rem;
+    }
+
+    .container__image__discription > button{
+      font-size: 3rem;
+    }
+
+    .container__overlay::after{
+      height: 37.5rem;
+      width: 37.5rem;
+      left: 37vw;
+    }
+
+    .container__nav__bubbles{
+      grid-column: 6 / span 4;
+    }
+
+    .container__nav__bubbles__dot{
+      margin: 0 2.25rem;
+    }
+
+    .endPage__tekst > h1{
+      grid-column: 2 / span 12;
+      padding: 1rem 0;
+    }
+
+    .endPage__tekst > h2{
+      grid-column: 2 / span 12;
+      padding: 1rem 0;
+    }
   }
 }

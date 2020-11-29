@@ -5,16 +5,16 @@ const fadeFigure__image = document.getElementById('js--fadeFigure__image');
 const overlay = document.getElementById('js--overlay');
 const image__discription_box = document.getElementById('js--image__discription_box');
 const image__discription = document.getElementById('js--image__discription');
-const bubbles = document.getElementsByClassName('nav__bubbles__dot');
+const bubbles = document.getElementsByClassName('container__nav__bubbles__dot');
 const image__discription__button = document.getElementById("js--image__discription__button");
-const backButton = document.getElementsByClassName('backButton');
+const backButton = document.getElementsByClassName('locatie__backButton');
 const woodsPage = document.getElementById('js--woodsPage');
 const fisch = document.getElementById('js--fisch');
 const towerPage = document.getElementById('js--towerPage');
 const navPage = document.getElementById('js--navPage');
-const scope = document.getElementsByClassName('scope');
+const scope = document.getElementsByClassName('locatie__scope');
 const targetCounter = document.getElementById('js--targetCounter');
-const target = document.getElementsByClassName('target');
+const target = document.getElementsByClassName('locatie__target');
 const info = document.getElementsByClassName('info');
 const closeInfoButton = document.getElementsByClassName('closeInfoButton');
 const infoBackground = document.getElementsByClassName('info__background');
@@ -208,7 +208,7 @@ for (let n = 0; n < target.length; n++) {
     breath.play();
     setTimeout(() =>{
     fireGun();
-    if (target[n].classList.contains('targetShot') == false) {
+    if (target[n].classList.contains('locatie__targetShot') == false) {
       tCount++;
       targetCounter.innerHTML = "Targets: " + tCount + "/7";
     };
@@ -261,7 +261,7 @@ for (let n = 0; n < target.length; n++) {
       default:
       info__box.innerHTML = "peepee poopoo"
     }
-    target[n].classList.add('targetShot');
+    target[n].classList.add('locatie__targetShot');
     for (let i = 0; i < info.length; i++) {
       info[i].style.display = "flex";
       setTimeout(() =>{
