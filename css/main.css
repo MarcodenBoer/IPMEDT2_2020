@@ -306,10 +306,12 @@ main{
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  transition: 0.5s;
 }
 
 .backButton:hover{
   cursor: none;
+  transform: scale(1.2);
 }
 
 .locatieBackground{
