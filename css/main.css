@@ -69,10 +69,12 @@ main{
 
 .container__button--forwards:hover{
   transform: scale(1.1);
+  cursor: pointer;
 }
 
 .container__button--backwards:hover{
   transform: scale(1.1);
+  cursor: pointer;
 }
 
 .container__nav__bubbles{
@@ -361,7 +363,7 @@ main{
   height: 20rem;
   width: 40rem;
   border: 3px solid white;
-  border-radius: 10px;
+  border-radius: 25px;
   animation: rotate 1.5s ease-in-out infinite alternate;
 }
 
@@ -661,6 +663,7 @@ main{
     background-color: var(--main-bg-color);
     color: var(--html-text-color);
     border: .2rem solid var(--html-text-color);
+    cursor: pointer;
   }
 
   .container__image__discription > button:active{
