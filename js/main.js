@@ -161,7 +161,7 @@ change_img__backwards.onclick = () =>{
     textToBeTyped.splice(0,1);
     setTimeout(() =>{
       typeText(textToBeTyped)
-    }, 100);
+    }, 50);
   }
 }
 
