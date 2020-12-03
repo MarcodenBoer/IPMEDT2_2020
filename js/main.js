@@ -49,7 +49,7 @@ wind.play();
 
 const walkingSoundPlay = () =>{
   walkingSound.play();
-  setTimeout(() => {walkingSound.pause(); walkingSound.currentTime = 0;}, 6000);
+  setTimeout(() => {walkingSound.pause(); walkingSound.currentTime = 0;}, 4200);
 }
 
 const removeUi = () =>{
@@ -111,7 +111,7 @@ change_img__forwards.onclick = () =>{
       image__discription__button.innerHTML = "Naar " + locatie[i];
     }
       fadeFigure.style.filter = "blur(0)";
-    },3000);
+    },1000);
     setTimeout(() =>{
       change_img__forwards.removeAttribute('disabled');
       change_img__backwards.removeAttribute('disabled');
@@ -147,7 +147,7 @@ change_img__backwards.onclick = () =>{
       image__discription__button.innerHTML = "Naar " + locatie[i];
     }
       fadeFigure.style.filter = "blur(0)";
-    },3000);
+    },1000);
   setTimeout(() =>{
     change_img__forwards.removeAttribute('disabled');
     change_img__backwards.removeAttribute('disabled');

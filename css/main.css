@@ -231,10 +231,12 @@ main{
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  transition: 0.5s;
 }
 
 .locatie__backButton:hover{
   cursor: none;
+  transform: scale(1.2);
 }
 
 .locatie__Background{
