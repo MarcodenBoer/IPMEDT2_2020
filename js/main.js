@@ -115,7 +115,6 @@ change_img__forwards.onclick = () =>{
     setTimeout(() =>{
       change_img__forwards.removeAttribute('disabled');
       change_img__backwards.removeAttribute('disabled');
-      console.log('button work');
       }, 10000);
   }
 
@@ -125,7 +124,6 @@ change_img__backwards.onclick = () =>{
   image__discription.innerHTML = "";
   change_img__forwards.setAttribute('disabled', 'true');
   change_img__backwards.setAttribute('disabled', 'true');
-  console.log('button no work');
   setTimeout(function () {
     if (i == 0) {
       bubbles[i].style.backgroundColor = dotColor__active;
@@ -151,7 +149,6 @@ change_img__backwards.onclick = () =>{
   setTimeout(() =>{
     change_img__forwards.removeAttribute('disabled');
     change_img__backwards.removeAttribute('disabled');
-    console.log('button work');
   }, 9000);
   }
 
