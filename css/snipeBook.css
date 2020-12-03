@@ -10,7 +10,7 @@ html{
 }
 
 h1{
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   font-family: serif;
   font-family: 'Questrial', sans-serif;
 }
@@ -62,8 +62,8 @@ h1{
 }
 
 .post__card__profile__pic{
-  width: 8rem;
-  height: 8rem;
+  width: 6rem;
+  height: 6rem;
   float: left;
   margin-right: 2rem;
   border-radius: 5px;
@@ -77,16 +77,15 @@ h1{
 .post__card__text{
   margin: 2rem 0;
   font-family: 'Roboto', sans-serif;
-  font-size: 175%;
+  font-size: 150%;
 }
 
 .text--big{
-  font-size: 200%;
+  font-size: 150%;
   font-weight: 600;
 }
 
 .text--small{
-  font-size: 150%;
   color: grey;
   margin-top: 0.5rem;
 }
@@ -158,7 +157,28 @@ h1{
 }
 
 @media (min-width: 800px) {
+  .post__card__profile__pic{
+    width: 8rem;
+    height: 8rem;
+  }
+
   .post__card{
     width: 40vw;
+  }
+
+  h1{
+    font-size: 2.4rem;
+  }
+
+  .text--big{
+    font-size: 200%;
+  }
+
+  .text--small{
+    font-size: 150%;
+  }
+
+  .post__card__text{
+    font-size: 175%;
   }
 }
