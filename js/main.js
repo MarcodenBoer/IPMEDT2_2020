@@ -79,7 +79,7 @@ const setButtonsActive = () =>{
     change_img__forwards.removeAttribute('disabled');
     change_img__backwards.removeAttribute('disabled');
     change_img__forwards.style.opacity = 1;
-  }, 9000);
+  }, 5500);
 }
 
 setButtonsActive();
@@ -115,7 +115,7 @@ change_img__forwards.onclick = () =>{
     setTimeout(() =>{
       change_img__forwards.removeAttribute('disabled');
       change_img__backwards.removeAttribute('disabled');
-      }, 10000);
+    }, 5500);
   }
 
 change_img__backwards.onclick = () =>{
@@ -149,7 +149,7 @@ change_img__backwards.onclick = () =>{
   setTimeout(() =>{
     change_img__forwards.removeAttribute('disabled');
     change_img__backwards.removeAttribute('disabled');
-  }, 9000);
+  }, 5500);
   }
 
   typeText = (textToBeTyped) =>{
